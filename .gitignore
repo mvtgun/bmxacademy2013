@@ -1,0 +1,11 @@
+!.gitkeep
+
+*.py[co]
+*.db
+*.swp
+*~
+
+env
+db/*
+static/static/*
+static/uploads/*
