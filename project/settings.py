@@ -71,6 +71,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     
+    "sorl.thumbnail",
     "bmxacademy",
 )
 LOGGING = {

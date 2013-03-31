@@ -1,10 +1,11 @@
 from django.db import models
+from sorl.thumbnail import ImageField
 
 class New(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
     text = models.TextField()
-    img = models.ImageField(upload_to="bmxacademy/new/img")
+    img = ImageField(upload_to="bmxacademy/new/img")
 
     def __unicode__(self):
         return u"%s %s" % (self.title, self.pub_date)
