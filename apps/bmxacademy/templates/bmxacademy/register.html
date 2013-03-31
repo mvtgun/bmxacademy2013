@@ -1,64 +1,56 @@
 
         <!-- menu -->
-
-        <form class="form">
+        <form class="form" method="post" action="#registration">
+            {% if registration_form.errors %}
+                <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny položky</p>
+            {% endif %}
+            {% csrf_token %}
             <div class="polozky left">
-                <p><input type="text" value="Jméno" class="pole"></p>
-
-                <p><input type="text" value="Příjmení" class="pole"></p>
-
-                <p><input type="text" value="Rodné číslo" class="pole"></p>
-
-                <p><input type="text" value="Adresa" class="pole"></p>
-
-                <p><input type="text" value="Tel. číslo" class="pole"></p>
-
+                <p><input type="text" name="registration-first_name" value="{{registration_form.first_name.value}}" placeholder="Jméno" class="pole"></p>
+                <p><input type="text" name="registration-last_name"  value="{{registration_form.last_name.value}}" placeholder="Příjmení" class="pole"></p>
+                <p><input type="text" value="{{registration_form.birth_number.value}}"  name="registration-birth_number" placeholder="Rodné číslo" class="pole"></p>
+                <p><input type="text"  value="{{registration_form.address.value}}"   name="registration-address" placeholder="Adresa" class="pole"></p>
+                <p><input  value="{{registration_form.phone.value}}"  type="text" name="registration-phone" placeholder="Tel. číslo" class="pole"></p>
                 <p>&nbsp;&nbsp;Všechny údaje jsou povinné.</p>
             </div>
             <!-- lefter -->
-
             <div class="druha left">
-                <p><input type="text" value="Datum narození" class="pole"></p>
-
-                <p><select class="selecter">
-                        <option value="" selected="selected">Velikost trika</option>
-                        <option value="">XS</option>
-                        <option value="">S</option>
-                        <option value="">M</option>
-                        <option value="">L</option>
-                        <option value="">XL</option>
+                <p><input type="text" value="{{registration_form.email.value}}"  name="registration-email" placeholder="Email" class="pole"></p>
+                <p><select class="selecter" value="{{registration_form.tshirt_size.value}}"  name="registration-tshirt_size">
+                        <option value="" {% if registration_form.tshirt_size.value == "" %}selected="selected"{% endif %}>Velikost trika</option>
+                        <option value="xs" {% if registration_form.tshirt_size.value == "xs" %}selected="selected"{% endif %}>XS</option>
+                        <option value="s" {% if registration_form.tshirt_size.value == "s" %}selected="selected"{% endif %}>S</option>
+                        <option value="ms" {% if registration_form.tshirt_size.value == "ms" %}selected="selected"{% endif %}>M</option>
+                        <option value="l" {% if registration_form.tshirt_size.value == "l" %}selected="selected"{% endif %}>L</option>
+                        <option value="xl" {% if registration_form.tshirt_size.value == "xl" %}selected="selected"{% endif %}>XL</option>
                     </select>
-
-                <p><select class="selecter">
-                        <option value="" selected="selected">Velikost čepice</option>
-                        <option value="">67/8</option>
-                        <option value="">7</option>
-                        <option value="">7 3/4</option>
-                        <option value="">7 3/8</option>
-                        <option value="">71/2</option>
-                        <option value="">71/4</option>
-                        <option value="">73/4</option>
-                        <option value="">73/8</option>
-                        <option value="">75/8</option>
-                        <option value="">8</option>
+                <p><select class="selecter"  value="{{registration_form.cap_size.value}}"  name="registration-cap_size">
+                        <option value="" {% if registration_form.cap_size.value == "" %}selected="selected"{% endif %}>Velikost čepice</option>
+                        <option {% if registration_form.cap_size.value == "1" %}selected="selected"{% endif %} value="1">67/8</option>
+                        <option {% if registration_form.cap_size.value == "2" %}selected="selected"{% endif %} value="2">7</option>
+                        <option {% if registration_form.cap_size.value == "3" %}selected="selected"{% endif %} value="3">7 3/4</option>
+                        <option {% if registration_form.cap_size.value == "4" %}selected="selected"{% endif %} value="4">7 3/8</option>
+                        <option {% if registration_form.cap_size.value == "5" %}selected="selected"{% endif %} value="5">71/2</option>
+                        <option {% if registration_form.cap_size.value == "6" %}selected="selected"{% endif %} value="6">71/4</option>
+                        <option {% if registration_form.cap_size.value == "7" %}selected="selected"{% endif %} value="7">73/4</option>
+                        <option {% if registration_form.cap_size.value == "8" %}selected="selected"{% endif %} value="8">73/8</option>
+                        <option {% if registration_form.cap_size.value == "9" %}selected="selected"{% endif %} value="9">75/8</option>
+                        <option {% if registration_form.cap_size.value == "10" %}selected="selected"{% endif %} value="10">8</option>
                     </select>
-
-                <p><select class="selecter">
-                        <option value="" selected="selected">Varianta campu</option>
-                        <option value="">8. denní - 6 900 CZK</option>
-                        <option value="">6. denní - 5 900 CZK</option>
-
+                <p><select class="selecter"  name="registration-camp_variant">
+                        <option value="" {% if registration_form.camp_variant.value == "" %}selected="selected"{% endif %}>Varianta campu</option>
+                        <option value="8denni" {% if registration_form.camp_variant.value == "8denni" %}selected="selected"{% endif %}>8. denní - 6 900 CZK</option>
+                        <option value="6denni" {% if registration_form.camp_variant.value == "6denni" %}selected="selected"{% endif %}>6. denní - 5 900 CZK</option>
                     </select>
-
-
-                <p>&nbsp;&nbsp;<input type="checkbox"> Souhlasím s <a href="/">pravidly akce</a>.</p>
-
-                <p><input type="submit" value="Registrovat" class="tlacitko right tlacitko_reg"></p>
-
+                    <p><select class="selecter" value="{{registration_form.transfer.value}}"  name="registration-transfer">
+                        <option value="" selected="selected">Doprava</option>
+                        <option value="ne">ne</option>
+                        <option value="oboje">cesta tam i zpět (pouze pro 8 denní verzy)</option>
+                        <option value="tam">pouze cesta na academii</option>
+                    </select>
+                <p>&nbsp;&nbsp;<input type="checkbox"> Souhlasím s <a href="#" target="blank">pravidly akce</a>.</p>
+                <p><input type="submit" placeholder="Registrovat" class="tlacitko right tlacitko_reg"></p>
                 <div style="clear:both;"></div>
-
             </div>
-
-
             <!-- lefter -->
         </form>

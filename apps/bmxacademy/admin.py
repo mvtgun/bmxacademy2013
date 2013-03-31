@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import New, Video
+from models import New, Video, Participant
 from sorl.thumbnail.admin import AdminImageMixin
 
 class NewAdmin(AdminImageMixin, admin.ModelAdmin):
@@ -7,3 +7,4 @@ class NewAdmin(AdminImageMixin, admin.ModelAdmin):
 
 admin.site.register(New, NewAdmin)
 admin.site.register(Video)
+admin.site.register(Participant)

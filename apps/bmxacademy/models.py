@@ -18,14 +18,17 @@ class Video(models.Model):
     def __unicode__(self):
         return u"%s %s" % (self.title, self.pub_date)
 
-# class Participant(models.Model):
-#     first_name = models.CharField(max_length=255)
-#     last_name = models.CharField(max_length=255)
-#     birth_number = models.CharField(max_length=13)
-#     address = models.CharField(max_length=255)
-#     phone = models.CharField(max_length=16)
-#     email = models.EmailField(max_length=64)
-#     tshirt_size = models.CharField(max_length=8)
-#     cap_size = models.CharField(max_length=8)
-#     camp_variant = models.CharField(max_length=8)
-#     transfer = models.CharField(max_length=8)
+class Participant(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    birth_number = models.CharField(max_length=13)
+    address = models.CharField(max_length=255)
+    phone = models.CharField(max_length=16)
+    email = models.EmailField(max_length=64)
+    tshirt_size = models.CharField(max_length=8)
+    cap_size = models.CharField(max_length=8)
+    camp_variant = models.CharField(max_length=8)
+    transfer = models.CharField(max_length=8)
+
+    def __unicode__(self):
+        return u"%s %s" % (self.first_name, self.last_name)
