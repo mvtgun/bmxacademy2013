@@ -2,3 +2,4 @@ django==1.4.5
 south
 
 sorl-thumbnail
+jsonindex

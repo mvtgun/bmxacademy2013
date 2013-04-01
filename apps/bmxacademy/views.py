@@ -1,4 +1,7 @@
 # coding: utf8
+import jsonindex
+from settings import normpath, PROJECT_ROOT
+
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
@@ -45,3 +48,9 @@ def index_view(request, template="bmxacademy/index.html"):
             "message_form": message_form,
         },
         context_instance=RequestContext(request))
+
+def images_json(request):
+    srv = normpath(PROJECT_ROOT, "static", "static", "images")
+    www = normpath(PROJECT_ROOT, "static")
+    response = jsonindex.index(srv, www)
+    return HttpResponse(response, mimetype="application/json")

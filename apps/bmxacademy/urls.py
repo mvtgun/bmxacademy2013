@@ -6,4 +6,7 @@ urlpatterns = patterns('',
     url(r'^$',
         index_view,
         name="bmxacademy.index"),
+    url(r'^json/images.json$',
+        images_json,
+        name="bmxacademy.json.images"),
 )
