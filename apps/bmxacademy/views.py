@@ -23,15 +23,15 @@ def index_view(request, template="bmxacademy/index.html"):
     if registration_form.is_valid():
         obj = registration_form.save()
         d = { "first_name": obj.first_name, "last_name": obj.last_name, "email": obj.email, "phone": obj.phone, }
-        Email.objects.get(id_name="registration").send('sika.ondrej@gmail.com', d)
-        Email.objects.get(id_name="registration_participant").send('sika.ondrej@gmail.com', d)
+        Email.objects.get(id_name="registration").send(settings.NOTIFY_MAIL, d)
+        Email.objects.get(id_name="registration_participant").send(obj.email, d)
         return HttpResponseRedirect("/")
 
     message_form = MessageForm(request.POST or None, prefix="message")
     if message_form.is_valid():
         obj = message_form.save()
         d = {"text": obj.text, "name": obj.name, "phone": obj.phone, "email": obj.email, "subject": obj.subject, }
-        Email.objects.get(id_name="message").send('sika.ondrej@gmail.com', d, obj.email)
+        Email.objects.get(id_name="message").send(settings.NOTIFY_MAIL, d, obj.email)
         return HttpResponseRedirect("/")
 
     if not request.POST:
