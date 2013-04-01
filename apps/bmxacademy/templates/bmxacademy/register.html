@@ -1,6 +1,7 @@
 
         <!-- menu -->
-        <form class="form" method="post" action="#registration">
+        <form class="form" method="post" action="#register">
+            <input type="hidden" name="form" value="registration">
             {% if registration_form.errors %}
                 <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny položky</p>
             {% endif %}
