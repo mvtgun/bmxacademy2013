@@ -1,6 +1,9 @@
 # coding: utf8
 import jsonindex
-from settings import normpath, PROJECT_ROOT
+from django.conf import settings
+import os
+normpath = lambda *args: os.path.normpath(os.path.abspath(os.path.join(*args)))
+PROJECT_ROOT = settings.PROJECT_ROOT
 
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
