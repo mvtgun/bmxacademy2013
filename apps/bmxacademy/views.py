@@ -53,7 +53,7 @@ def index_view(request, template="bmxacademy/index.html"):
         context_instance=RequestContext(request))
 
 def images_json(request):
-    srv = normpath(PROJECT_ROOT, "static", "static", "images")
+    srv = normpath(PROJECT_ROOT, "static", "static", "photos")
     www = normpath(PROJECT_ROOT)
     response = jsonindex.index(srv, www)
     return HttpResponse(response, mimetype="application/json")
