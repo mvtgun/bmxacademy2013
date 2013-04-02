@@ -1,26 +1,33 @@
-        <form class="form" method="post" action="#contact">
-            {% if message_form.errors %}
-                <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny položky</p>
-            {% endif %}
-            {% csrf_token %}
-            <input type="hidden" name="form" value="message">
-            <div class="polozky left">
-                <p>*<input type="text" name="message-name" value="{{message_form.name.value}}" placeholder="Jméno" class="pole"></p>
-                <p>*<input type="text" name="message-email" value="{{message_form.email.value}}" placeholder="E-mail" class="pole"></p>
-                <p>&nbsp;&nbsp;<input type="text"  value="{{message_form.phone.value}}" name="message-phone" placeholder="Tel. číslo" class="pole"></p>
-                <p>&nbsp;&nbsp;<input type="text" name="message-subject"  value="{{message_form.subject.value}}" placeholder="Předmět dotazu" class="pole"></p>
-                <p>* povinný údaj</p>
-            </div>
-            <div class="left">
-                <p style="margin-left: 12px;">*</p><textarea name="message-text" class="textarea">{% if message_form.text.value %}{{message_form.text.value}}{%else%}Ahoj BMX Academy,{%endif%}</textarea>
-                <p><input type="submit" placeholder="Odeslat" class="tlacitko right"></p>
-            </div>
-        </form>
-        <div class="poradatel left">
-            <h2>Pořadatel BMX Academy</h2>
-            <p>Telefon: +420 608 844 878</p>
-            <p>E-mail: info@bmxacademy.cz</p>
-            <p>facebook: <a href="http://www.facebook.com/bmxacademy">BMX Academy</a></p>
-            <p>YouTube: <a href="http://www.youtube.com/bmxacademyCZ">BMX Academy</a></p>
-            <br>
-        </div>
+{% if message_form_done %}
+    <p style="font-size:20px;margin-bottom:20px;"><br><br>
+    Zprávu jsme přijaly a odpovíme co nejdříve to bude možné.
+    <br>S pozdravem, Team BMX Academy
+    </p>
+{% else %}
+<form class="form" method="post" action="#contact">
+    {% if message_form.errors %}
+        <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny položky</p>
+    {% endif %}
+    {% csrf_token %}
+    <input type="hidden" name="form" value="message">
+    <div class="polozky left">
+        <p>*<input type="text" name="message-name" value="{{message_form.name.value}}" placeholder="Jméno" class="pole"></p>
+        <p>*<input type="text" name="message-email" value="{{message_form.email.value}}" placeholder="E-mail" class="pole"></p>
+        <p>&nbsp;&nbsp;<input type="text"  value="{{message_form.phone.value}}" name="message-phone" placeholder="Tel. číslo" class="pole"></p>
+        <p>&nbsp;&nbsp;<input type="text" name="message-subject"  value="{{message_form.subject.value}}" placeholder="Předmět dotazu" class="pole"></p>
+        <p>* povinný údaj</p>
+    </div>
+    <div class="left">
+        <p style="margin-left: 12px;">*</p><textarea name="message-text" class="textarea">{% if message_form.text.value %}{{message_form.text.value}}{%else%}Ahoj BMX Academy,{%endif%}</textarea>
+        <p><input type="submit" placeholder="Odeslat" class="tlacitko right"></p>
+    </div>
+</form>
+<div class="poradatel left">
+    <h2>Pořadatel BMX Academy</h2>
+    <p>Telefon: +420 608 844 878</p>
+    <p>E-mail: info@bmxacademy.cz</p>
+    <p>facebook: <a href="http://www.facebook.com/bmxacademy">BMX Academy</a></p>
+    <p>YouTube: <a href="http://www.youtube.com/bmxacademyCZ">BMX Academy</a></p>
+    <br>
+</div>
+{% endif %}
