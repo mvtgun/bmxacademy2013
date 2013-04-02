@@ -18,7 +18,8 @@
         <p>* povinný údaj</p>
     </div>
     <div class="left">
-        <p style="margin-left: 12px;">*</p><textarea name="message-text" class="textarea">{% if message_form.text.value %}{{message_form.text.value}}{%else%}Ahoj BMX Academy,{%endif%}</textarea>
+        <p style="margin-left: 12px;">*</p><textarea name="message-text" class="textarea" placeholder="Hi BMX Accademy, ...">{% if message_form.text.value %}{{message_form.text.value}}{%else%}Ahoj BMX Academy,
+{%endif%}</textarea>
         <p><input type="submit" placeholder="Odeslat" class="tlacitko right"></p>
     </div>
 </form>
