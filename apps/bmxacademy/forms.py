@@ -3,6 +3,7 @@ from models import Participant, Message
 
 
 class RegistrationForm(forms.ModelForm):
+    accept = forms.BooleanField()
     class Meta:
         model = Participant
 
