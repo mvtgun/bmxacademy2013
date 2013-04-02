@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,36 +8,8 @@
     <meta name="viewport" content="width=device-width">
     <title>BMX Academy s Michalem Beranem, 2013</title>
     <link rel="icon" href="http://michaelsvarc.com/bmx/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/static/bmxacademy/css/screen.css" media="screen">
-    <style type="text/css" media="handheld">
-
-        * {
-            margin:0 px;
-            padding: 0 px;
-        }
-
-    </style>
-        <style type="text/css">
-        body
-        {
-
-            background: black url(http://webdev.fit.cvut.cz/~altmaon1/bmx/backgrounds/montage-1b.jpg) no-repeat fixed;
-        }
-
-        /*
-        #background_wrap {
-            z-index: -1;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-size: 100%;
-            background-image: url("backgrounds/montage-0.jpg");
-            background-attachment: fixed;
-        }
-        */
-    </style>
+    <link rel="stylesheet" href="{{STATIC_URL}}bmxacademy/css/screen.css" media="screen"/>
+    <link rel="stylesheet" href="{{STATIC_URL}}bmxacademy/css/slide.css"/>
 </head>
 
 <body>
@@ -49,7 +20,7 @@
     <div id="lista">
         <a href="http://www.youtube.com/bmxacademyCZ" class="icon_yt"></a>
         <a href="http://www.facebook.com/bmxacademy" class="icon_fcb"></a>
-        <a href="/" class="icon_home"></a>
+        <a href="#top" class="icon_home"></a>
     </div>
     <!-- lista -->
 </div>
@@ -60,143 +31,675 @@
     <a href="#top" id="head"><span>BMX Academy s Michalem Beranem 11. - 18. SRPEN 2013</span></a>
 
 </div>
-<div class="page">
+<!-- prostredek -->
+
+
+<div class="page_downer">
     <div class="wrapper" id="top">
-        <div id="menu">
+        <div class="menu">
+
             <ul>
                 <li><a href="#about">O Campu</a></li>
-                <img src="/static/static/bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
                 <li><a href="#news">Novinky</a></li>
-                <img src="/static/static/bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
                 <li><a href="#gallery">Fotogalerie</a></li>
-                <img src="/static/static/bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
                 <li><a href="#video">Videogalerie</a></li>
-                <img src="/static/static/bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
                 <li><a href="#partners">Partneři</a></li>
-                <img src="/static/static/bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
                 <li><a href="#contact">Kontakt</a></li>
-                <img src="/static/static/bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
                 <li><a href="#register">Registrace</a></li>
+
             </ul>
+
         </div>
         <!-- menu -->
-        <h3>Skatepark Chomutov</h3>
-        <h1> 11. - 17. SRPEN,2013</h1>
+
+
+        <img src="{{STATIC_URL}}bmxacademy/images/skatepark.png" alt="Skatepark Hradec Králové" class="middle">
+        <img src="{{STATIC_URL}}bmxacademy/images/napis.png" width="960px" alt="11. - 18. 2013" class="middle">
+
+
     </div>
     <!-- wrapper -->
+
 </div>
 <!-- page -->
+
 <p class="kopy">Copyright © 2012-2013 – BMX Academy</p>
+
 <div class="downer">
-    <a href="#next" class="down"><span>down</span></a>
+    <a href="#next" class="down" id="position-button"><span>down</span></a>
 </div>
+
 <div class="page_downer">
+
     <div class="wrapper" id="about">
-        {% include "bmxacademy/about.html" %}
+
+
+        <div class="menu">
+
+            <ul>
+                <li><a href="#about">O Campu</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#news">Novinky</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#gallery">Fotogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#video">Videogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#partners">Partneři</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#contact">Kontakt</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#register">Registrace</a></li>
+
+            </ul>
+
+        </div>
+        <!-- menu -->
+
+
+        <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#academy" data-toggle="tab">BMX Academy</a></li>
+            <li><a href="#skatepark" data-toggle="tab">Skatepark</a></li>
+            <li><a href="#ubytovani" data-toggle="tab">Ubytování</a></li>
+            <li><a href="#stravovani" data-toggle="tab">Stravování</a></li>
+            <li><a href="#cena" data-toggle="tab">Cena campu</a></li>
+            <li><a href="#prijezd" data-toggle="tab">Příjezd - odjezd</a></li>
+            <li><a href="#doprava" data-toggle="tab">Doprava</a></li>
+            <li><a href="#program" data-toggle="tab">Rámcový program</a></li>
+            <li><a href="#instruktori" data-toggle="tab">Instruktoři</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="academy">
+
+                <ul class="odrazky">
+                    <h2>BMX Academy</h2>
+
+                    <li><strong>BMX Academy</strong> - 2. ročník největší letní školy BMX v Čechách a na Slovensku pro
+                        začátečníky, středně i více pokročilé jezdce BMX bez omezení věku a pohlaví.
+                    </li>
+                    <li><strong>BMX Academy</strong> podporuje sportovní růst a nadšení příznivců BMX, rozvíjí sportovní
+                        výkonnost jezdců a propaguje Fair Play sportovní chování.
+                    </li>
+                    <li><strong>BMX Academy</strong> - vyučují naši nejzkušenější přední jezdci s letitou zkušeností a
+                        mnoha úspěchy na domácí i zahraniční scéně BMX.
+                    </li>
+                    <li><strong>BMX Academy</strong> - připravila pro všechny své jezdce značkovou kšiltovku a triko
+                        Fallen
+                        v hodnotě 1.500 CZK, značkové ceny do interních závodů BMX Academy Cap, foto
+                        a video reportáž z campu.
+                    </li>
+                    <li><strong>BMX Academy</strong> - je týden plný BMX, adrenalinu, sportu, dobré nálady a
+                        nezapomenutelných zážitků.
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
         <div class="cistic"></div>
+
     </div>
+    <!-- wrapper -->
+
 </div>
+<!-- page -->
+
 <div class="page_downer">
+
     <div class="wrapper" id="news">
-        {% include "bmxacademy/news.html" %}
+
+        {% include "bmxacademy/menu.html" %}
+
+        <p class="poctar"><span class="page_count">1</span>/<span class="page_total">1</span></p>
+
+        <div style="clear:both;"></div>
+        <div id="one" class="contentslider">
+            <div class="cs_wrapper">
+                <div class="cs_slider">
+                    <div class="cs_article">
+
+                        <div class="new">
+
+                            <p><img src="{{STATIC_URL}}bmxacademy/images/photo_new.jpg" class="photo_new left" alt="prvni"></p>
+
+                            <p class="nadpis_new">Nadpis tady bude k horké novince, klidně na dva řádky. I klidně delší
+                                nadpis,
+                                žádnej spěch.</p>
+
+                            <p class="popis_new">Jednou z nejpopulárnějších hudebních služebna internetu je Grooveshark.
+                                Obrovskou
+                                databázi hudebního serveru tvoří sami uživatelé. Vítr skoro nefouká a tak by se na první
+                                pohled
+                                mohlo zdát, že se balónky snad vůbec nepohybují. Jenom tak klidně levitují ve vzduchu.
+                                Jelikož
+                                slunce jasně září a na obloze byste od východu k západu hledali mráček marně, balónky
+                                působí jako
+                                jakási fata morgána uprostřed pouště. Zkrátka široko daleko nikde nic, jen zelenkavá
+                                tráva, jasně
+                                modrá obloha a tři křiklavě barevné pouťové balónky, které se téměř nepozorovatelně
+                                pohupují ani ne
+                                moc vysoko, ani moc nízko nad zemí. Kdyby pod balónky nebyla sytě zelenkavá tráva, ale
+                                třeba suchá
+                                silnice či beton, možná by bylo vidět jejich barevné stíny - to jak přes poloprůsvitné
+                                barevné
+                                balónky prochází ostré sluneční paprsky.</p>
+                        </div>
+                        <!-- new -->
+                        <a href="index.php" class="sipka_new_right"></a>
+
+
+                    </div>
+                    <!-- End cs_article -->
+
+                    <div class="cs_article">
+
+                        <div class="new">
+
+                            <p><img src="{{STATIC_URL}}bmxacademy/images/photo_new.jpg" class="photo_new left" alt="prvni"></p>
+
+                            <p class="nadpis_new">Nadpis tady bude k horké novince, klidně na dva řádky. I klidně delší
+                                nadpis,
+                                žádnej spěch.</p>
+
+                            <p class="popis_new">Jednou z nejpopulárnějších hudebních služebna internetu je Grooveshark.
+                                Obrovskou
+                                databázi hudebního serveru tvoří sami uživatelé. Vítr skoro nefouká a tak by se na první
+                                pohled
+                                mohlo zdát, že se balónky snad vůbec nepohybují. Jenom tak klidně levitují ve vzduchu.
+                                Jelikož
+                                slunce jasně září a na obloze byste od východu k západu hledali mráček marně, balónky
+                                působí jako
+                                jakási fata morgána uprostřed pouště. Zkrátka široko daleko nikde nic, jen zelenkavá
+                                tráva, jasně
+                                modrá obloha a tři křiklavě barevné pouťové balónky, které se téměř nepozorovatelně
+                                pohupují ani ne
+                                moc vysoko, ani moc nízko nad zemí. Kdyby pod balónky nebyla sytě zelenkavá tráva, ale
+                                třeba suchá
+                                silnice či beton, možná by bylo vidět jejich barevné stíny - to jak přes poloprůsvitné
+                                barevné
+                                balónky prochází ostré sluneční paprsky.</p>
+                        </div>
+                        <!-- new -->
+                        <a href="index.php" class="sipka_new_right"></a>
+
+
+                    </div>
+                    <!-- End cs_article -->
+
+                    <div class="cs_article">
+
+                        <div class="new">
+
+                            <p><img src="{{STATIC_URL}}bmxacademy/images/photo_new.jpg" class="photo_new left" alt="prvni"></p>
+
+                            <p class="nadpis_new">Nadpis tady bude k horké novince, klidně na dva řádky. I klidně delší
+                                nadpis,
+                                žádnej spěch.</p>
+
+                            <p class="popis_new">Jednou z nejpopulárnějších hudebních služebna internetu je Grooveshark.
+                                Obrovskou
+                                databázi hudebního serveru tvoří sami uživatelé. Vítr skoro nefouká a tak by se na první
+                                pohled
+                                mohlo zdát, že se balónky snad vůbec nepohybují. Jenom tak klidně levitují ve vzduchu.
+                                Jelikož
+                                slunce jasně září a na obloze byste od východu k západu hledali mráček marně, balónky
+                                působí jako
+                                jakási fata morgána uprostřed pouště. Zkrátka široko daleko nikde nic, jen zelenkavá
+                                tráva, jasně
+                                modrá obloha a tři křiklavě barevné pouťové balónky, které se téměř nepozorovatelně
+                                pohupují ani ne
+                                moc vysoko, ani moc nízko nad zemí. Kdyby pod balónky nebyla sytě zelenkavá tráva, ale
+                                třeba suchá
+                                silnice či beton, možná by bylo vidět jejich barevné stíny - to jak přes poloprůsvitné
+                                barevné
+                                balónky prochází ostré sluneční paprsky.</p>
+                        </div>
+                        <!-- new -->
+                        <a href="index.php" class="sipka_new_right"></a>
+
+
+                    </div>
+                    <!-- End cs_article -->
+
+                    <div class="cs_article">
+
+                        <div class="new">
+
+                            <p><img src="{{STATIC_URL}}bmxacademy/images/photo_new.jpg" class="photo_new left" alt="prvni"></p>
+
+                            <p class="nadpis_new">Nadpis tady bude k horké novince, klidně na dva řádky. I klidně delší
+                                nadpis,
+                                žádnej spěch.</p>
+
+                            <p class="popis_new">Jednou z nejpopulárnějších hudebních služebna internetu je Grooveshark.
+                                Obrovskou
+                                databázi hudebního serveru tvoří sami uživatelé. Vítr skoro nefouká a tak by se na první
+                                pohled
+                                mohlo zdát, že se balónky snad vůbec nepohybují. Jenom tak klidně levitují ve vzduchu.
+                                Jelikož
+                                slunce jasně září a na obloze byste od východu k západu hledali mráček marně, balónky
+                                působí jako
+                                jakási fata morgána uprostřed pouště. Zkrátka široko daleko nikde nic, jen zelenkavá
+                                tráva, jasně
+                                modrá obloha a tři křiklavě barevné pouťové balónky, které se téměř nepozorovatelně
+                                pohupují ani ne
+                                moc vysoko, ani moc nízko nad zemí. Kdyby pod balónky nebyla sytě zelenkavá tráva, ale
+                                třeba suchá
+                                silnice či beton, možná by bylo vidět jejich barevné stíny - to jak přes poloprůsvitné
+                                barevné
+                                balónky prochází ostré sluneční paprsky.</p>
+                        </div>
+                        <!-- new -->
+                        <a href="index.php" class="sipka_new_right"></a>
+
+
+                    </div>
+                    <!-- End cs_article -->
+
+                </div>
+                <!-- End cs_slider -->
+            </div>
+            <!-- End cs_wrapper -->
+        </div>
+        <!-- End contentslider -->
+
+
     </div>
+    <!-- wrapper -->
+
 </div>
+<!-- page -->
+
 <div class="page_downer">
+
+
     <div class="wrapper" id="gallery">
-        {% include "bmxacademy/gallery.html" %}
+
+
+        <div class="menu">
+
+            <ul>
+                <li><a href="#about">O Campu</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#news">Novinky</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#gallery">Fotogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#video">Videogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#partners">Partneři</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#contact">Kontakt</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#register">Registrace</a></li>
+
+            </ul>
+
+        </div>
+        <!-- menu -->
+
+
+        <div id="fotogalerie">
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
+        </div>
+        <!-- fotogalerie -->
+
+
+        <div class="prepinani left"><span><a href="index.php">Předchozí</a></span><img
+                src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg"
+                alt="pomlcka"
+                class="pomlcka_prepinani"><span><a
+                    href="index.php">Další</a></span>
+        </div>
+        <!-- prepinani -->
+
+        <div class="prepinani right"><span><a href="index.php">2012</a></span><img
+                src="{{STATIC_URL}}bmxacademy/images/oddelovnik.png"
+                alt="pomlcka"
+                class="oddelovnik"><span
+                class="active"><a href="index.php">2013</a></span>
+        </div>
+        <!-- prepinani -->
     </div>
+    <!-- wrapper -->
+
 </div>
+<!-- page -->
+
 <div class="page_downer">
+
+
     <div class="wrapper" id="video">
-        {% include "bmxacademy/video.html" %}
+
+        <div class="menu">
+
+            <ul>
+                <li><a href="#about">O Campu</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#news">Novinky</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#gallery">Fotogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#video">Videogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#partners">Partneři</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#contact">Kontakt</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#register">Registrace</a></li>
+
+            </ul>
+
+        </div>
+        <!-- menu -->
+
+
+        <div id="three" class="contentslider">
+            <div class="cs_wrapper">
+                <div class="cs_slider">
+
+                    <div class="cs_video">
+                        <h4>
+                            psum je demonstrativní výplňový text používaný v tiskařském a knihařském
+                        </h4>
+
+                        <div>
+                            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/video.jpg" alt="video" width="290px" class="video"></a>
+                        </div>
+                    </div>
+
+                    <div class="cs_video">
+                        <h4>Lorem Ipsum je považováno</h4>
+
+                        <div>
+                            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/video.jpg" alt="video" width="290px" class="video"></a>
+                        </div>
+                    </div>
+
+                    <div class="cs_video">
+                        <h4>ástup elektronické sazby v podstatě beze změny. Nejvíce popularizováno</h4>
+
+                        <div>
+                            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/video.jpg" alt="video" width="290px" class="video"></a>
+                        </div>
+                    </div>
+
+                    <div class="cs_video">
+                        <h4>Popisek</h4>
+
+                        <div>
+                            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/video.jpg" alt="video" width="290px" class="video"></a>
+                        </div>
+                    </div>
+
+                    <div class="cs_video">
+                        <h4>Popisek</h4>
+
+                        <div>
+                            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/video.jpg" alt="video" width="290px" class="video"></a>
+                        </div>
+                    </div>
+
+                    <div class="cs_video">
+                        <h4>Popisek</h4>
+
+                        <div>
+                            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/video.jpg" alt="video" width="290px" class="video"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- wrapper -->
+
 </div>
+<!-- page -->
+
 <div class="page_downer">
+
+
     <div class="wrapper" id="partners">
-        {% include "bmxacademy/partners.html" %}
+
+        <div class="menu">
+
+            <ul>
+                <li><a href="#about">O Campu</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#news">Novinky</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#gallery">Fotogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#video">Videogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#partners">Partneři</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#contact">Kontakt</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#register">Registrace</a></li>
+
+            </ul>
+
+        </div>
+        <!-- menu -->
+
+
+        <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/fallen_black.jpg" alt="fallen_logo" class="gen_partner"></a>
+
+        <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/koloseum.jpg" alt="fallen_logo" class="partner"></a>
+
     </div>
+    <!-- wrapper -->
+
 </div>
+<!-- page -->
+
 <div class="page_downer">
+
+
     <div class="wrapper" id="contact">
-        {% include "bmxacademy/contact.html" %}
+
+        <div class="menu">
+
+            <ul>
+                <li><a href="#about">O Campu</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#news">Novinky</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#gallery">Fotogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#video">Videogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#partners">Partneři</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#contact">Kontakt</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#register">Registrace</a></li>
+
+            </ul>
+
+        </div>
+        <!-- menu -->
+
+
+        <form class="form">
+            <div class="polozky left">
+                <p>*<input type="text" value="Jméno" class="pole"></p>
+
+                <p>*<input type="text" value="E-mail" class="pole"></p>
+
+                <p>&nbsp;&nbsp;<input type="text" value="Tel. číslo" class="pole"></p>
+
+                <p>&nbsp;&nbsp;<input type="text" value="Předmět dotazu" class="pole"></p>
+
+                <p>* povinný údaj</p>
+            </div>
+            <!-- lefter -->
+            <div class="left">
+                <p style="margin-left: 12px;">*</p><textarea class="textarea">Ahoj BMX Academy, </textarea>
+
+                <p><input type="submit" value="Odeslat" class="tlacitko right"></p>
+            </div>
+            <!-- lefter -->
+        </form>
+
+        <div class="poradatel left">
+            <h2>Pořadatel BMX Academy</h2>
+
+            <p>Telefon: +420 608 844 878</p>
+
+            <p>E-mail: info@bmxacademy.cz</p>
+
+            <p>facebook: <a href="http://www.facebook.com/bmxacademy">BMX Academy</a></p>
+
+            <p>YouTube: <a href="http://www.youtube.com/bmxacademyCZ">BMX Academy</a></p>
+            <br>
+
+
+        </div>
+        <!-- lefter -->
+
+
     </div>
+    <!-- wrapper -->
+
+    <div style="clear:both;"></div>
 </div>
+<!-- page -->
+
 <div class="page_downer">
+
+
     <div class="wrapper" id="register">
-        {% include "bmxacademy/register.html" %}
+
+        <div class="menu">
+
+            <ul>
+                <li><a href="#about">O Campu</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#news">Novinky</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#gallery">Fotogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#video">Videogalerie</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#partners">Partneři</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#contact">Kontakt</a></li>
+                <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="menu_pomlcka" class="pomlcka">
+                <li><a href="#register">Registrace</a></li>
+
+            </ul>
+
+        </div>
+        <!-- menu -->
+
+
+        <!-- menu -->
+
+        <form class="form">
+            <div class="polozky left">
+                <p><input type="text" value="Jméno" class="pole"></p>
+
+                <p><input type="text" value="Příjmení" class="pole"></p>
+
+                <p><input type="text" value="Rodné číslo" class="pole"></p>
+
+                <p><input type="text" value="Adresa" class="pole"></p>
+
+                <p><input type="text" value="Tel. číslo" class="pole"></p>
+
+                <p>&nbsp;&nbsp;Všechny údaje jsou povinné.</p>
+            </div>
+            <!-- lefter -->
+
+            <div class="druha left">
+                <p><input type="text" value="Datum narození" class="pole"></p>
+
+                <p><select class="selecter">
+                        <option value="" selected="selected">Velikost trika</option>
+                        <option value="">XS</option>
+                        <option value="">S</option>
+                        <option value="">M</option>
+                        <option value="">L</option>
+                        <option value="">XL</option>
+                    </select>
+
+                <p><select class="selecter">
+                        <option value="" selected="selected">Velikost čepice</option>
+                        <option value="">67/8</option>
+                        <option value="">7</option>
+                        <option value="">7 3/4</option>
+                        <option value="">7 3/8</option>
+                        <option value="">71/2</option>
+                        <option value="">71/4</option>
+                        <option value="">73/4</option>
+                        <option value="">73/8</option>
+                        <option value="">75/8</option>
+                        <option value="">8</option>
+                    </select>
+
+                <p><select class="selecter">
+                        <option value="" selected="selected">Varianta campu</option>
+                        <option value="">8. denní - 6 900 CZK</option>
+                        <option value="">6. denní - 5 900 CZK</option>
+
+                    </select>
+
+
+                <p>&nbsp;&nbsp;<input type="checkbox"> Souhlasím s <a href="index.php">pravidly akce</a>.</p>
+
+                <p><input type="submit" value="Registrovat" class="tlacitko right tlacitko_reg"></p>
+
+                <div style="clear:both;"></div>
+
+            </div>
+
+
+            <!-- lefter -->
+        </form>
+
     </div>
+    <!-- wrapper -->
+
 </div>
 <!-- page -->
 <div id="dummy"></div>
 
-<script type="text/javascript" src="/static/static/bmxacademy/scripts/jquery.js"></script>
-<script type="text/javascript" src="/static/static/bmxacademy/scripts/wheel.js"></script>
-<script type="text/javascript" src="/static/static/bmxacademy/scripts/disable.js"></script>
-<script type="text/javascript" src="/static/static/bmxacademy/scripts/bundle.js"></script>
-<script type="text/javascript" src="/static/static/bmxacademy/scripts/scroller.js"></script>
-<script type="text/javascript" src="/static/static/bmxacademy/scripts/other.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/jquery.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/jquery.ui.js"></script>
+
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/wheel.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/touchwipe.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/disable.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/bundle.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/scroller.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/bootstrap.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/jquery.ennui.contentslider.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/videoSlider.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/other.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
 
-
-        var scroll = true;
-
-        var callbackScroll = $.Callbacks();
-        callbackScroll.add( scrollManip )
-
-        function scrollManip() {
-            scroll = false;
-            setTimeout(function() {
-                scroll = true;
-            }, 800);
-        }
-
-        var scroller = new $.Scroller(
-            [
-                new $.Bundle("div#top","a[href='#top']"),
-                new $.Bundle("div#about","a[href='#about']"),
-                new $.Bundle("div#news","a[href='#news']"),
-                new $.Bundle("div#gallery","a[href='#gallery']"),
-                new $.Bundle("div#video","a[href='#video']"),
-                new $.Bundle("div#partners","a[href='#partners']"),
-                new $.Bundle("div#contact","a[href='#contact']"),
-                new $.Bundle("div#register","a[href='#register']")
-            ]
-        );
-
-
-        $("a[href='#next']").click(function (){
-            scroller.Next();
-            return false;
-        });
-
-
-        scroller.setUp();
-
-        disable_scroll();
-
-        $(document).mousewheel(function(event, delta) {
-                if(delta == -1) if(scroll) {
-                    callbackScroll.fire();
-                    scroller.Next();
-                }
-                if(delta == 1) if(scroll) {
-                    callbackScroll.fire();
-                    scroller.Prev();
-                }
-        });
-
-
-        $(document).keydown(function (event) {
-            if (event.which == 40) {
-                scroller.Next();
-            }
-            if (event.which == 38) {
-                scroller.Prev();
-            }
-        });
-
-    });
 </script>
 
 </body>

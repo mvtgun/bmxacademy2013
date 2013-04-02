@@ -5,8 +5,11 @@ padding: 0;
 
 body{
     font-family: 'Arial', sans-serif;
+    background: black url("../images/background.jpg") fixed repeat;
     color: white;
     font-size: 11px;
+    min-width:1000px;
+    min-height:1000px;
 }
 
 h1,h2
@@ -17,6 +20,7 @@ h1,h2
 
 div.wrapper#top{
     text-align: center;
+    z-index: 2;
 }
 
 
@@ -79,9 +83,23 @@ p{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-image: url(/static/static/bmxacademy/images/logo.png);
+    background-image: url(../images/logo.png);
     position: fixed;
     margin-top: -400px;
+    z-index: 0;
+}
+
+
+#head.small{
+    width: 225px;
+    height: 91px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/logo_small.png);
+    position: fixed;
+    margin-top: -400px;
+    z-index: 0;
 }
 
 #head span{
@@ -95,7 +113,7 @@ p{
     height: 45px;
     margin-top: -400px;
     position: fixed;
-    z-index: 20;         
+    z-index: 0;
 }
 
 .icon_home, .icon_fcb, .icon_yt{
@@ -106,7 +124,7 @@ p{
 }
 
 .icon_home{
-    background-image: url(/static/static/bmxacademy/images/house.png);          
+    background-image: url(../images/house.png);          
 }
 
 .icon_home:hover{
@@ -114,7 +132,7 @@ p{
 }
 
 .icon_fcb{
-    background-image: url(/static/static/bmxacademy/images/fcb.png);          
+    background-image: url(../images/fcb.png);          
 }
 
 .icon_fcb:hover{
@@ -122,7 +140,7 @@ p{
 }
 
 .icon_yt{
-    background-image: url(/static/static/bmxacademy/images/yt.png);          
+    background-image: url(../images/yt.png);          
 }
 
 .icon_yt:hover{
@@ -133,13 +151,12 @@ p{
 
 /*menu*/
 
-#menu{
+.menu{
+    margin-top: -50px;
     position: absolute;
-    float: left;
-    margin-top: -60px;     
 }
 
-#menu ul{
+.menu ul{
     width: 960px;
     height: 50px;
     margin-left: auto;
@@ -147,14 +164,14 @@ p{
     list-style-type: none;          
 }
 
-#menu ul li{
+.menu ul li{
     display: inline; 
     padding-left: 12px;
     padding-right: 12px;       
     float: left;    
 }
 
-#menu ul li a{
+.menu ul li a{
     line-height: 50px;
     float: left;
     padding-left: 0px;
@@ -165,9 +182,9 @@ p{
     text-decoration: none;         
 }
 
-#menu ul li a:hover{
+.menu ul li a:hover{
     color: #e3e3e3;
-    background: url(/static/static/bmxacademy/images/podtrzeni.jpg) repeat-x center bottom;
+    background: url(../images/podtrzeni.jpg) repeat-x center bottom;
 }
 
 .pomlcka{
@@ -181,14 +198,16 @@ p{
 .page{
     width: 100%;
     height: 394px;
-    background-image: url(/static/static/bmxacademy/images/b_page.png);
-    background-repeat: repeat-x;     
+    background-image: url(../images/b_page.png);
+    background-repeat: repeat-x;
+    z-index: 3;
 }
 
 .wrapper{
     width: 960px;
     height: auto;
-    margin: 0px auto 0px auto;    
+    margin: 0px auto 0px auto;
+    z-index: 2;
 }
 
 .wrapper .p_kratky{
@@ -208,7 +227,7 @@ p{
     display: block;
     margin-top: 20px;
     text-align: justify;
-     margin-right: 20px;         
+    margin-right: 20px;
 }
 
 
@@ -220,12 +239,12 @@ p{
 }
 
 .prostredek{
-    width: 378px; 
+    width: 378px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 400px;
-                
+    z-index: 2;
 }
 
 
@@ -234,37 +253,46 @@ p{
 {
     bottom: -5px;
     width: 100%;
-    z-index: 10 ;
+    z-index: 1000 ;
     position: fixed;
 }
 
-.down
+.down, .up
 {   
     display: block;
     width: 40px;
     height: 42px;
     position: relative;
     margin: 0 auto ;    
-    background: transparent url(/static/static/bmxacademy/images/downer.png) no-repeat 0 0;
 }
 
-.down:hover
+.down{
+    background: transparent url(../images/downer.png) no-repeat 0 0;
+
+}
+
+.up{
+    background: transparent url(../images/downer2.png) no-repeat 0 0;
+}
+
+.down:hover .up:hover
 {   
     background-position: 0px -41px;
 }
 
-.down span{
+.down span, .up span{
     display: none;          
 }
 
+
 .page_downer
 {
-    
+    z-index: 3;
     display: block;
     width: 100%;
     min-height: 394px;
     height:  auto;
-    background-image: url(/static/static/bmxacademy/images/b_page.png);
+    background-image: url(../images/b_page.png);
     background-repeat: repeat; 
     position: relative;
     margin: 0 auto ;
@@ -295,43 +323,14 @@ p{
     height: 340px;
     float: left;
      
-}       
-
-.sipka_new_left{
-    display: block;
-    width: 17px;
-    height: 62px;
-    float: left;
-    margin-top: 150px;
-    background-image: url(/static/static/bmxacademy/images/sipka_left.png);
-              
 }
 
-.sipka_new_left:hover{
-    background-position: 0px -62px;                     
-  }
-                     
-.sipka_new_right:hover
-{
-   background-position: 0px -62px;                  
-}
-
-.sipka_new_right{
-    display: block;
-    width: 17px;
-    height: 62px;
-    float: right;
-    margin-top: 150px;
-    background-image: url(/static/static/bmxacademy/images/sipka_right.png);
-              
-}
 
 .new{
-    width: 920px;
-    height: 300px;
+    width: 901px;
     margin-top: 20px;
+    height: 300px;
     float: left;
-
 }
 
 .photo_new{
@@ -432,22 +431,11 @@ p{
 
 #videogalerie{
     width: 910px;
-    float: left;
-    margin-left: 10px;
-    margin-top: 20px; 
-           
 }
 
 #video_panel{
     background-color: blue;
     margin-left: -22px;            
-}
-
-.video{
-    float: left;
-    margin-right: 0px;
-    margin-left: 20px;
-    margin-top: 0px;      
 }
 
 /* formular */
@@ -567,45 +555,54 @@ p{
     width: 100%;
     height: auto;
     float: left;
-    margin-top: 10px; 
+    margin-top: 10px;
     margin-left: px;
     margin-bottom: 10px;
     padding-left: 10px;
-       
-} 
+
+}
 
 .polovina{
     width: 300px;
     height: auto;
-    float: left;     
-         }
+    float: left;
+}
 
 .odrazky h2{
     line-height: 40px;
-    margin-left: -10px;         
-  }
+    margin-left: -10px;
+}
 
 .odrazky li{
     line-height: 20px;
-    margin-bottom: 2px;           
+    margin-bottom: 2px;
 }
 
 .tab-pane{
     width: 100%;
     height: auto;
-    float: left; 
+    float: left;
     margin-left: px;
     margin-bottom: 10px;
     text-align: justify;
-    line-height: 20px;            
+    line-height: 20px;
 }
 
 .tab-pane h2{
-    line-height: 40px;               
+    line-height: 40px;
 }
 
 #predchozi_camp{
-    float: left;                 
+    float: left;
+}
+
+#video {
+    padding-top: 40px;
+}
+
+#video .menu
+{
+    margin-top: -90px;
 }
 
 #dalsi_camp a, #predchozi_camp a{
@@ -617,48 +614,49 @@ p{
     font-weight: bold;
     color: white;
     text-decoration: none;
-    font-size: 20px;         
+    font-size: 20px;
 }
 
 #dalsi_camp a:hover{
     color: #e3e3e3;
-    text-decoration: underline;                 
+    text-decoration: underline;
 }
- 
+
 #predchozi_camp a:hover{
     color: #e3e3e3;
-    text-decoration: underline;                 
- }
- 
- .nav-tabs{
+    text-decoration: underline;
+}
+
+.nav-tabs{
     float: left;
     width: 100%;
     margin-top: 20px;
-    list-style-type: none; 
-       
+    list-style-type: none;
+
 }
 
 .nav-tabs li{
-    display: inline;        
+    display: inline;
 }
 
 .nav-tabs li.active a{
     float: left;
     padding: 15px 15px 12px 15px;
     border: solid  #df0445 2px;
-    color: white; 
-    margin-top: 1px; 
-     border-bottom: solid #df0445 2px;               
+    color: white;
+    margin-top: 1px;
+    border-bottom: solid #df0445 2px;
 }
 
 .nav-tabs li a{
     float: left;
     padding: 15px 15px 15px 15px;
     border: none;
-    border-bottom: solid #df0445 2px;  
+    border-bottom: solid #df0445 2px;
 }
 
 .nav-tabs li a:hover{
     color: white;
-    border-bottom: solid white 2px;                           
+    border-bottom: solid white 2px;
 }
+

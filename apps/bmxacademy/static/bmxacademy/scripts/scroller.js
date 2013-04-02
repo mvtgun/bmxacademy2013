@@ -1,30 +1,71 @@
-$.Scroller = function (pos) {
+$.Scroller = function (pos, tab) {
 
     var positions = pos;
     var actual = 0;
+    var downer = 0;
+    var tablet = tab;
 
 
     var onMove = $.Callbacks();
-    onMove.add( hideArrow );
+    onMove.add(hideArrow);
+
 
     var onStop = $.Callbacks();
-    onStop.add( showArrow );
+    onStop.add(showArrow);
 
 
-    function hideArrow () {
-        $("#menu").fadeOut(100);
-        $("#head").fadeOut(100);
-        $("#lista").fadeOut(100);
-        $("a[href='#next']").fadeOut(100);
+    this.detectPositionDown = function() {
+        if(actual == positions.count -1) return;
+        var current = $(window).scrollTop();
 
+        for (i = 0; i < positions.length; i++) {
+            if(actual == positions.count -1) return;
+
+            if(current >= positions[actual+1].getPosition())
+            {
+                actual++;
+            }
+        }
     }
 
-    function showArrow () {
-        $('#menu').css("top", positions[actual].getPosition());
-        $("#menu").fadeIn(400);
-        $("#head").fadeIn(400);
-        $("#lista").fadeIn(400);
-        if(actual != positions.length -1 ) $("a[href='#next']").fadeIn(400);
+    this.detectPositionUp = function() {
+        if(actual == 0) return;
+        var current = $(window).scrollTop();
+
+        for (i = 0; i < positions.length; i++) {
+            if(actual == 0) return;
+
+            if(current <= positions[actual-1].getPosition())
+            {
+                actual--;
+            }
+        }
+    }
+
+
+
+    function hideArrow() {
+        $(".menu").fadeOut(100);
+        $("a[href='#next']").fadeOut(100);
+        $("a[href='#prev']").fadeOut(100);
+    }
+
+    function showArrow() {
+        $(".menu").fadeIn(400);
+
+        var down = $("a#position-button");
+
+        if (actual == 0) {
+            $(down).attr("href", "#next");
+            $(down).attr("class", "down");
+        }
+
+        if (actual == positions.length - 1) {
+            $(down).attr("href", "#prev");
+            $(down).attr("class", "up");
+        }
+
+        $(down).fadeIn(400);
     }
 
     this.getOnMoveCallback = function () {
@@ -36,6 +77,7 @@ $.Scroller = function (pos) {
     }
 
     this.Next = function () {
+        this.detectPositionDown();
         if (actual + 1 < positions.length)
             actual++;
         else
@@ -44,6 +86,7 @@ $.Scroller = function (pos) {
     }
 
     this.Prev = function () {
+        this.detectPositionUp();
         if (actual - 1 >= 0)
             actual--;
         else
@@ -52,16 +95,19 @@ $.Scroller = function (pos) {
     }
 
     this.toActual = function () {
-        this.scrollTo(positions[actual].getPosition()-(($(window).height()-positions[actual].getHeight())/2)-35);
+        if (!tablet) {
+            this.scrollTo(positions[actual].getPosition() - (($(window).height() - positions[actual].getHeight()) / 2) - 35);
+        }
+        else {
+            this.scrollTo(positions[actual].getPosition() - (($(window).height() - positions[actual].getHeight()) / 2) - 120);
+        }
     }
 
-    this.getPositions = function ()
-    {
+    this.getPositions = function () {
         return positions;
     }
 
-    this.getPosition = function (i)
-    {
+    this.getPosition = function (i) {
         return positions[i];
     }
 
@@ -91,16 +137,15 @@ $.Scroller = function (pos) {
     this.scrollTo = function (to) {
         var scroller = this;
         // target is current
-        if(timeToScroll(this.currentPosition(), to) == 0) return;
+        if (this.timeToScroll(this.currentPosition(), to) == 0) return;
 
         onMove.fire();
         $('html, body').animate({
             scrollTop: to
-        }, this.timeToScroll(this.currentPosition(), to),"swing", this.getOnStopCallback().fire);
+        }, this.timeToScroll(this.currentPosition(), to), "swing", this.getOnStopCallback().fire);
     }
 
-    this.setUp = function ()
-    {
+    this.setUp = function () {
         for (var i = 0; i < positions.length; i++)
             this.registerBundle(i);
 
@@ -108,9 +153,9 @@ $.Scroller = function (pos) {
 
     this.registerBundle = function (i) {
         var scroller = this;
-        $(positions[i].getLink()).click(function (){
+        $(positions[i].getLink()).click(function () {
             actual = i;
-            scroller.scrollTo(positions[actual].getPosition()-(($(window).height()-positions[actual].getHeight())/2)-35);
+            scroller.toActual();
             return false;
         });
     }
