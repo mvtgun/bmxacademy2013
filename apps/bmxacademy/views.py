@@ -18,6 +18,8 @@ from forms import RegistrationForm, MessageForm
 def index_view(request, template="bmxacademy/index.html"):
     new_qs = New.objects.order_by("-pk")
     video_qs = Video.objects.order_by("-pk")
+    registration_form_done = False
+    message_form_done  = False
 
     registration_form = RegistrationForm(request.POST or None, prefix="registration")
     if registration_form.is_valid():
@@ -25,14 +27,16 @@ def index_view(request, template="bmxacademy/index.html"):
         d = { "first_name": obj.first_name, "last_name": obj.last_name, "email": obj.email, "phone": obj.phone, }
         Email.objects.get(id_name="registration").send(settings.NOTIFY_MAIL, d)
         Email.objects.get(id_name="registration_participant").send(obj.email, d)
-        return HttpResponseRedirect("/")
+        registration_form_done = True
+        # return HttpResponseRedirect("/")
 
     message_form = MessageForm(request.POST or None, prefix="message")
     if message_form.is_valid():
         obj = message_form.save()
         d = {"text": obj.text, "name": obj.name, "phone": obj.phone, "email": obj.email, "subject": obj.subject, }
         Email.objects.get(id_name="message").send(settings.NOTIFY_MAIL, d, obj.email)
-        return HttpResponseRedirect("/")
+        message_form_done = True
+        # return HttpResponseRedirect("/")
 
     if not request.POST:
         registration_form = None
@@ -49,6 +53,8 @@ def index_view(request, template="bmxacademy/index.html"):
             "video_qs": video_qs,
             "registration_form": registration_form,
             "message_form": message_form,
+            "registration_form_done": registration_form_done,
+            "message_form_done": message_form_done,
         },
         context_instance=RequestContext(request))
 
