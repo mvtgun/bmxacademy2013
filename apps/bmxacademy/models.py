@@ -62,7 +62,7 @@ class Email(models.Model):
         message = Template(self.message).render(Context(d))
         return (subject, message)
 
-    def send(self, to, d={}, sender=None, fail_silently=False):
+    def send(self, to, d={}, sender=None, fail_silently=True):
         if not sender:
             sender = self.default_sender
         if type(to) in (str, unicode):
