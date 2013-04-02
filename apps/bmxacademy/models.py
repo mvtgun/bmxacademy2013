@@ -62,8 +62,8 @@ class Email(models.Model):
     def send(self, to, d={}, sender=None, fail_silently=False):
         if not sender:
             sender = self.default_sender
-        if type(to) == str:
-            to = [to]
+        if type(to) in (str, unicode):
+            to = [to, ]
         subject, message = self.render(d)
         send_mail(subject, message, sender, to, fail_silently=fail_silently)
 
