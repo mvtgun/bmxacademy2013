@@ -560,3 +560,105 @@ p{
     bottom: 20px;
     right:20px
 }
+
+/* stylus o campu */
+
+.odrazky{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 10px; 
+    margin-left: px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+       
+} 
+
+.polovina{
+    width: 300px;
+    height: auto;
+    float: left;     
+         }
+
+.odrazky h2{
+    line-height: 40px;
+    margin-left: -10px;         
+  }
+
+.odrazky li{
+    line-height: 20px;
+    margin-bottom: 2px;           
+}
+
+.tab-pane{
+    width: 100%;
+    height: auto;
+    float: left; 
+    margin-left: px;
+    margin-bottom: 10px;
+    text-align: justify;
+    line-height: 20px;            
+}
+
+.tab-pane h2{
+    line-height: 40px;               
+}
+
+#predchozi_camp{
+    float: left;                 
+}
+
+#dalsi_camp a, #predchozi_camp a{
+    width: 200px;
+    height: 50px;
+    float: right;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;         
+}
+
+#dalsi_camp a:hover{
+    color: #e3e3e3;
+    text-decoration: underline;                 
+}
+ 
+#predchozi_camp a:hover{
+    color: #e3e3e3;
+    text-decoration: underline;                 
+ }
+ 
+ .nav-tabs{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    list-style-type: none; 
+       
+}
+
+.nav-tabs li{
+    display: inline;        
+}
+
+.nav-tabs li.active a{
+    float: left;
+    padding: 15px 15px 12px 15px;
+    border: solid  #df0445 2px;
+    color: white; 
+    margin-top: 1px; 
+     border-bottom: solid #df0445 2px;               
+}
+
+.nav-tabs li a{
+    float: left;
+    padding: 15px 15px 15px 15px;
+    border: none;
+    border-bottom: solid #df0445 2px;  
+}
+
+.nav-tabs li a:hover{
+    color: white;
+    border-bottom: solid white 2px;                           
+}
