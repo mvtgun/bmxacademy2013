@@ -37,8 +37,8 @@ class Message(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
-    phone = models.CharField(max_length=16)
-    subject = models.CharField(max_length=255)
+    phone = models.CharField(max_length=16, blank=True, null=True)
+    subject = models.CharField(max_length=255, blank=True, null=True)
     text = models.TextField()
 
     def __unicode__(self):
