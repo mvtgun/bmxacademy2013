@@ -1,17 +1,14 @@
 {% load thumbnail %}
-<p class="poctar">1/5</p>
-<div class="novinka">
-    <a href="/" class="sipka_new_left"></a>
-    {% for new in new_qs %}
-        <div class="new">
-            {% thumbnail new.img "321x244" as im %}
-                <p><img src="{{im.url}}" class="photo_new left" alt="prvni"></p>
-            {% endthumbnail %}
-            <p class="nadpis_new">{{new.title}}</p>
-            <p class="popis_new">{{new.text|linebreaksbr}}</p>
-        </div>
-    {% endfor %}
+{% for new in new_qs %}
+<div class="cs_article">
+    <div class="new">
+        {% thumbnail new.img "321x244" as im %}
+            <p><img src="{{im.url}}" class="photo_new left" alt="prvni"></p>
+        {% endthumbnail %}
+        <p class="nadpis_new">{{new.title}}</p>
+        <p class="popis_new">{{new.text|linebreaksbr}}</p>
+    </div>
     <!-- new -->
-    <a href="/" class="sipka_new_right"></a>
+    <a href="index.php" class="sipka_new_right"></a>
 </div>
-<!-- novinka-->
+{% endfor %}
