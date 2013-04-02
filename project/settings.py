@@ -72,6 +72,7 @@ INSTALLED_APPS = (
     'south',
     
     "sorl.thumbnail",
+    "remote_ajax",
     "bmxacademy",
 )
 LOGGING = {
