@@ -8,7 +8,13 @@
 <form class="form" method="post" action="#register">
     <input type="hidden" name="form" value="registration">
     {% if registration_form.errors %}
-        <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny položky</p>
+        {% if registration_form.errors.email %}
+            <p style="font-size:20px;">Zadejte validní email</p>
+        {% endif %}
+        {% if registration_form.errors.accept %}
+            <p style="font-size:20px;">Musíte souhlasit s podmínkami</p>
+        {% endif %}
+        <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny povinné položky</p>
     {% endif %}
     {% csrf_token %}
     <div class="polozky left">
