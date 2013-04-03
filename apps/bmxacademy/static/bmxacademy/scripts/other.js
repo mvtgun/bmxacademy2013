@@ -96,7 +96,7 @@ $(window).bind('orientationchange', function(event) {
     } else
     {
         $("#head").attr("class","large");
-        $("#head").parent().css("width","225px");
+        $("#head").parent().css("width","311px");
     }
     scroller.toActual();
 });
