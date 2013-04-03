@@ -7,8 +7,9 @@ class NewAdmin(ImageCroppingMixin, admin.ModelAdmin):
     pass
 
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ("first_name", "last_name", "birth_number", "address", "phone",
+    list_display = ("last_name", "first_name", "registration_date", "birth_number", "address", "phone",
         "email", "tshirt_size", "cap_size", "camp_variant", "transfer")
+    readonly_fields = ("registration_date", )
 
 admin.site.register(New, NewAdmin)
 admin.site.register(Video)

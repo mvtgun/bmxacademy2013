@@ -26,6 +26,7 @@ class Video(models.Model):
         return u"%s %s" % (self.title, self.pub_date)
 
 class Participant(models.Model):
+    registration_date = models.DateTimeField(auto_now_add=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     birth_number = models.CharField(max_length=13)
