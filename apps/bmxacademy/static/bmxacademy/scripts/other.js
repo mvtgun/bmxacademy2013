@@ -119,4 +119,13 @@ setInterval(function(){
     if (window.location.hash == "#register") { /* set_position(5958)*/ }
 }, 10)
 
+// Tabs
+
+$('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+
+
+
 });

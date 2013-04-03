@@ -1,3 +1,17 @@
+<style type="text/css">
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+</style>
+
 <ul class="nav nav-tabs" id="myTab">
     <li class="active"><a href="#academy" data-toggle="tab">BMX Academy</a></li>
     <li><a href="#skatepark" data-toggle="tab">Skatepark</a></li>
@@ -12,28 +26,30 @@
 
 <div class="tab-content">
     <div class="tab-pane active" id="academy">
-
-        <ul class="odrazky">
-            <h2>BMX Academy</h2>
-
-            <li><strong>BMX Academy</strong> - 2. ročník největší letní školy BMX v Čechách a na Slovensku pro
-                začátečníky, středně i více pokročilé jezdce BMX bez omezení věku a pohlaví.
-            </li>
-            <li><strong>BMX Academy</strong> podporuje sportovní růst a nadšení příznivců BMX, rozvíjí sportovní
-                výkonnost jezdců a propaguje Fair Play sportovní chování.
-            </li>
-            <li><strong>BMX Academy</strong> - vyučují naši nejzkušenější přední jezdci s letitou zkušeností a
-                mnoha úspěchy na domácí i zahraniční scéně BMX.
-            </li>
-            <li><strong>BMX Academy</strong> - připravila pro všechny své jezdce značkovou kšiltovku a triko
-                Fallen
-                v hodnotě 1.500 CZK, značkové ceny do interních závodů BMX Academy Cap, foto
-                a video reportáž z campu.
-            </li>
-            <li><strong>BMX Academy</strong> - je týden plný BMX, adrenalinu, sportu, dobré nálady a
-                nezapomenutelných zážitků.
-            </li>
-        </ul>
-
+        {% include "bmxacademy/about/bmx_academy.html" %}
+    </div>
+    <div class="tab-pane" id="skatepark">
+        {% include "bmxacademy/about/skatepark.html" %}
+    </div>
+    <div class="tab-pane" id="ubytovani">
+        {% include "bmxacademy/about/ubytovani.html" %}
+    </div>
+    <div class="tab-pane" id="stravovani">
+        {% include "bmxacademy/about/stravovani.html" %}
+    </div>
+    <div class="tab-pane" id="cena">
+        {% include "bmxacademy/about/cena.html" %}
+    </div>
+    <div class="tab-pane" id="prijezd">
+        {% include "bmxacademy/about/prijezd.html" %}
+    </div>
+    <div class="tab-pane" id="doprava">
+        {% include "bmxacademy/about/doprava.html" %}
+    </div>
+    <div class="tab-pane" id="program">
+        {% include "bmxacademy/about/program.html" %}
+    </div>
+    <div class="tab-pane" id="instruktori">
+        {% include "bmxacademy/about/instruktori.html" %}
     </div>
 </div>
