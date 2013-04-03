@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import New, Video, Participant, Message, Email
+from models import New, Video, Participant, Message, Email, Gallery, Picture
 from sorl.thumbnail.admin import AdminImageMixin
 from image_cropping import ImageCroppingMixin
 
@@ -11,8 +11,20 @@ class ParticipantAdmin(admin.ModelAdmin):
         "email", "tshirt_size", "cap_size", "camp_variant", "transfer")
     readonly_fields = ("registration_date", )
 
+class PictureInline(admin.TabularInline):
+    model = Picture
+    extra = 0 
+
+class GalleryAdmin(ImageCroppingMixin, admin.ModelAdmin):
+    inlines = (PictureInline, )
+
+class PictureAdmin(ImageCroppingMixin, admin.ModelAdmin):
+    pass
+
 admin.site.register(New, NewAdmin)
 admin.site.register(Video)
 admin.site.register(Participant, ParticipantAdmin)
+admin.site.register(Gallery, GalleryAdmin)
+admin.site.register(Picture, PictureAdmin)
 admin.site.register(Message)
 admin.site.register(Email)

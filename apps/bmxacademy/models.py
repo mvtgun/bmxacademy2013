@@ -52,6 +52,21 @@ class Message(models.Model):
     def __unicode__(self):
         return u"%s %s" % (self.subject, self.pub_date)
 
+class Gallery(models.Model):
+    name = models.CharField(max_length=64)
+
+    def __unicode__(self):
+        return u"%s" % (self.name)
+
+class Picture(models.Model):
+    gallery = models.ForeignKey(Gallery)
+    img = ImageCropField(upload_to="bmxacademy/picture/img")
+    img_crop = ImageRatioField("img", "130x130")
+
+    def __unicode__(self):
+        return u"%s  %i" % (self.gallery.name, self.pk)
+
+
 # Email
 from django.template import Template, Context
 from django.core.mail import send_mail
