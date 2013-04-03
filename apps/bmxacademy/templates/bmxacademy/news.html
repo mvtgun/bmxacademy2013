@@ -2,9 +2,12 @@
 {% for new in new_qs %}
 <div class="cs_article">
     <div class="new">
-        <p><img src="{% cropped_thumbnail new img_crop height=280 upscale %}" class="photo_new left" alt="prvni"></p>
-        <p class="nadpis_new">{{new.title}}</p>
-        <p class="popis_new">{{new.text|linebreaksbr}}</p>
+        <table><tr valign="top"><td>
+            <p><img src="{% cropped_thumbnail new img_crop height=280 upscale %}" class="photo_new left" alt="prvni"></p>
+        </td><td>
+            <p class="nadpis_new">{{new.title}}</p>
+            <p class="popis_new">{{new.text|linebreaksbr}}</p>
+        </td></tr></table>
     </div>
     <!-- new -->
     <a href="index.php" class="sipka_new_right"></a>
