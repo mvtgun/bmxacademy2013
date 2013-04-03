@@ -16,7 +16,9 @@ class Video(models.Model):
     video_code = models.CharField(max_length=16)
 
     def thumbnail_url(self):
-        return ""
+        return "http://img.youtube.com/vi/%s/0.jpg" % self.video_code
+    def youtube_url(self):
+        return "http://youtube.com/watch?v=%s" % self.video_code
 
     def __unicode__(self):
         return u"%s %s" % (self.title, self.pub_date)
