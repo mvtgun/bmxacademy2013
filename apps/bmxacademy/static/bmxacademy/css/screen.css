@@ -341,8 +341,8 @@ p{
 
 .nadpis_new{
     display: block;
-    width: 550px;
-    margin-left: 20px;
+    width: 470px;
+    /*margin-left: 20px;*/
     margin-top: 0px;
     height: auto;
     line-height: 35px;
@@ -354,8 +354,8 @@ p{
 
 .popis_new{
     display: block;
-    width: 550px;
-    margin-left: 20px;
+    width: 470px;
+    /*margin-left: 20px;*/
     margin-top: 20px;
     text-align: justify;
     line-height: 23px;
