@@ -11,7 +11,7 @@
     {% csrf_token %}
     <input type="hidden" name="form" value="message">
     <div class="polozky left">
-        <p>*<input type="text" name="message-name" value="{{message_form.name.value}}" placeholder="Jméno" class="pole"></p>
+        <p>*<input type="text" name="message-name" value="{{message_form.name.value}}" placeholder="Jméno a příjemní" class="pole"></p>
         <p>*<input type="text" name="message-email" value="{{message_form.email.value}}" placeholder="E-mail" class="pole"></p>
         <p>&nbsp;&nbsp;<input type="text"  value="{{message_form.phone.value}}" name="message-phone" placeholder="Tel. číslo" class="pole"></p>
         <p>&nbsp;&nbsp;<input type="text" name="message-subject"  value="{{message_form.subject.value}}" placeholder="Předmět dotazu" class="pole"></p>
@@ -24,7 +24,7 @@
     </div>
 </form>
 <div class="poradatel left">
-    <h2>Pořadatel BMX Academy</h2>
+    <h2>BMX Academy</h2>
     <p>Telefon: +420 608 844 878</p>
     <p>E-mail: info@bmxacademy.cz</p>
     <p>facebook: <a href="http://www.facebook.com/bmxacademy">BMX Academy</a></p>
