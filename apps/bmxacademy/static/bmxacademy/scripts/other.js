@@ -116,8 +116,9 @@ scroller.detectPositionDown();
 scroller.toActual();
 
 setInterval(function(){
-    if (window.location.hash == "#register") { /* set_position(5958)*/ }
-}, 10)
+    if (window.location.hash == "#register") { scroller.scrollTo(5800); window.location.hash = ""; }
+    if (window.location.hash == "#contact") { scroller.scrollTo(5020); window.location.hash = ""; }
+}, 40)
 
 // Tabs
 
