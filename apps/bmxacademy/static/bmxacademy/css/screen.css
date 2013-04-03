@@ -664,3 +664,8 @@ p{
     border-bottom: solid white 2px;
 }
 
+.form-error {
+    color: #DF0445;
+    font-size:20px;
+    margin-bottom: 10px;
+}

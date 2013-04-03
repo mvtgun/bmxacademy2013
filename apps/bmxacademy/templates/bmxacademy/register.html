@@ -1,6 +1,6 @@
 <!-- menu -->
 {% if registration_form_done %}
-    <p style="font-size:20px;margin-bottom:20px;"><br><br>
+    <p><br><br>
     Registrace proběhla úspěšne. V emailu máte podrobnější informace.
     <br>S pozdravem, Team BMX Academy
     </p>
@@ -9,12 +9,12 @@
     <input type="hidden" name="form" value="registration">
     {% if registration_form.errors %}
         {% if registration_form.errors.email %}
-            <p style="font-size:20px;">Zadejte validní email</p>
+            <p class="form-error">Zadejte validní email</p>
         {% endif %}
         {% if registration_form.errors.accept %}
-            <p style="font-size:20px;">Musíte souhlasit s podmínkami</p>
+            <p class="form-error">Musíte souhlasit s podmínkami</p>
         {% endif %}
-        <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny povinné položky</p>
+        <p class="form-error">Zadejte prosím všechny povinné položky</p>
     {% endif %}
     {% csrf_token %}
     <div class="polozky left">
