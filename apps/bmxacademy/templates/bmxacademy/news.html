@@ -1,10 +1,8 @@
-{% load thumbnail %}
+{% load cropping %}
 {% for new in new_qs %}
 <div class="cs_article">
     <div class="new">
-        {% thumbnail new.img "321x244" as im %}
-            <p><img src="{{im.url}}" class="photo_new left" alt="prvni"></p>
-        {% endthumbnail %}
+        <p><img src="{% cropped_thumbnail new img_crop height=280 upscale %}" class="photo_new left" alt="prvni"></p>
         <p class="nadpis_new">{{new.title}}</p>
         <p class="popis_new">{{new.text|linebreaksbr}}</p>
     </div>

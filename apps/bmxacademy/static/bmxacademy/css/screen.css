@@ -336,6 +336,7 @@ p{
 .photo_new{
     margin-top: 8px;
     margin-left: 10px;          
+    margin-right: 30px;
 }
 
 .nadpis_new{
@@ -347,7 +348,7 @@ p{
     line-height: 35px;
     font-size: 25px;
     color: white;
-    float: left;
+    /*float: left;*/
     font-weight: bold;           
 }
 
@@ -358,7 +359,7 @@ p{
     margin-top: 20px;
     text-align: justify;
     line-height: 23px;
-    float: left;
+    /*float: left;*/
 
 }
 

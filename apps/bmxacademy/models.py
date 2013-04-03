@@ -1,11 +1,13 @@
 from django.db import models
 from sorl.thumbnail import ImageField
+from image_cropping import ImageRatioField, ImageCropField
 
 class New(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
     text = models.TextField()
-    img = ImageField(upload_to="bmxacademy/new/img")
+    img = ImageCropField(upload_to="bmxacademy/new/img")
+    img_crop = ImageRatioField('img', '321x244')
 
     def __unicode__(self):
         return u"%s %s" % (self.title, self.pub_date)

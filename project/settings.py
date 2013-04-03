@@ -71,7 +71,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     
-    "sorl.thumbnail",
+    "image_cropping",
+    "easy_thumbnails",
     "remote_ajax",
     "bmxacademy",
 )
@@ -108,3 +109,11 @@ SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 NOTIFY_MAIL = "sika.ondrej@gmail.com"
+
+THUMBNAIL_PROCESSORS = (
+    'image_cropping.thumbnail_processors.crop_corners',
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'easy_thumbnails.processors.scale_and_crop',
+    'easy_thumbnails.processors.filters',
+)
