@@ -6,7 +6,7 @@
 {% else %}
 <form class="form" method="post" action="#contact">
     {% if message_form.errors %}
-        <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny položky</p>
+        <p style="font-size:20px;margin-bottom:20px;">Zadejte prosím všechny povinné položky</p>
     {% endif %}
     {% csrf_token %}
     <input type="hidden" name="form" value="message">
