@@ -644,15 +644,16 @@ p{
 
 .nav-tabs li.active a{
     float: left;
-    padding: 15px 15px 12px 15px;
+    padding: 15px 15px 15px 15px;
     border: solid  #df0445 2px;
     color: white;
-    margin-top: 1px;
+    margin-top: 4px;
     border-bottom: solid #df0445 2px;
 }
 
 .nav-tabs li a{
     float: left;
+    margin-top: 6px;
     padding: 15px 15px 15px 15px;
     border: none;
     border-bottom: solid #df0445 2px;
