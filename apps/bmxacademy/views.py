@@ -1,5 +1,5 @@
 # coding: utf8
-import jsonindex
+import json
 from django.conf import settings
 import os
 normpath = lambda *args: os.path.normpath(os.path.abspath(os.path.join(*args)))
@@ -12,7 +12,7 @@ from django.core.urlresolvers import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 
-from models import New, Video, Email
+from models import New, Video, Email, Gallery
 from forms import RegistrationForm, MessageForm
 
 def index_view(request, template="bmxacademy/index.html"):
@@ -58,8 +58,15 @@ def index_view(request, template="bmxacademy/index.html"):
         },
         context_instance=RequestContext(request))
 
-def images_json(request):
-    srv = normpath(PROJECT_ROOT, "static", "static", "photos")
-    www = normpath(PROJECT_ROOT)
-    response = jsonindex.index(srv, www)
+from easy_thumbnails.files import get_thumbnailer
+def gallery_json(request, gallery_pk):
+    gallery = Gallery.objects.get(pk=gallery_pk)
+    out = []
+    for picture in gallery.picture_set.all():
+        thumbnail_url = get_thumbnailer(picture.img).get_thumbnail({'size': (430, 360), 'box': picture.img_crop, 'crop': True, 'detail': True, }).url
+        out.append({
+            "thumbnail": thumbnail_url,
+            "full": picture.img.url,
+        })
+    response = json.dumps(out)
     return HttpResponse(response, mimetype="application/json")
