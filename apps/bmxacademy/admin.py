@@ -8,7 +8,7 @@ class NewAdmin(ImageCroppingMixin, admin.ModelAdmin):
 
 class ParticipantAdmin(admin.ModelAdmin):
     list_display = ("last_name", "first_name", "registration_date", "birth_number", "address", "phone",
-        "email", "tshirt_size", "cap_size", "camp_variant", "transfer")
+        "email", "tshirt_size", "cap_size", "camp_variant", "transfer", "advance", "payment")
     readonly_fields = ("registration_date", )
 
 class PictureInline(admin.TabularInline):

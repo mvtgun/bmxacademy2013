@@ -37,6 +37,8 @@ class Participant(models.Model):
     cap_size = models.CharField(max_length=8)
     camp_variant = models.CharField(max_length=8)
     transfer = models.CharField(max_length=8)
+    advance = models.BooleanField(verbose_name="Zaloha")
+    payment = models.BooleanField(verbose_name="Platba")
 
     def __unicode__(self):
         return u"%s %s" % (self.first_name, self.last_name)
