@@ -112,12 +112,14 @@ $.Scroller = function (pos, tab) {
 
     function highlightActualLink()
     {
-        positions[actual].getLink().attr('class','menuActual');
+        if(actual != 0)
+            positions[actual].getLink().attr('class','menuActual');
     }
 
     function normalizeActualLink()
     {
-        positions[actual].getLink().attr('class','');
+        if(actual != 0)
+            positions[actual].getLink().attr('class','');
     }
 
 
