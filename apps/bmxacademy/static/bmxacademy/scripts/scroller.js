@@ -6,12 +6,16 @@ $.Scroller = function (pos, tab) {
     var tablet = tab;
 
 
+
+    var beforeMove = $.Callbacks();
+    beforeMove.add(normalizeActualLink);
+
     var onMove = $.Callbacks();
     onMove.add(hideArrow);
 
-
     var onStop = $.Callbacks();
     onStop.add(showArrow);
+    onStop.add(highlightActualLink);
 
 
     this.detectPositionDown = function() {
@@ -68,6 +72,10 @@ $.Scroller = function (pos, tab) {
         $(down).fadeIn(400);
     }
 
+    this.getBeforeMoveCallback = function () {
+        return beforeMove;
+    }
+
     this.getOnMoveCallback = function () {
         return onMove;
     }
@@ -79,7 +87,11 @@ $.Scroller = function (pos, tab) {
     this.Next = function () {
         this.detectPositionDown();
         if (actual + 1 < positions.length)
+        {
+            this.getBeforeMoveCallback().fire();
             actual++;
+        }
+
         else
             return;
         this.toActual();
@@ -88,11 +100,26 @@ $.Scroller = function (pos, tab) {
     this.Prev = function () {
         this.detectPositionUp();
         if (actual - 1 >= 0)
+        {
+            this.getBeforeMoveCallback().fire();
             actual--;
+        }
+
         else
             return;
         this.toActual();
     }
+
+    function highlightActualLink()
+    {
+        positions[actual].getLink().attr('class','menuActual');
+    }
+
+    function normalizeActualLink()
+    {
+        positions[actual].getLink().attr('class','');
+    }
+
 
     this.toActual = function () {
         if (!tablet) {
@@ -154,6 +181,7 @@ $.Scroller = function (pos, tab) {
     this.registerBundle = function (i) {
         var scroller = this;
         $(positions[i].getLink()).click(function () {
+            scroller.getBeforeMoveCallback().fire();
             actual = i;
             scroller.toActual();
             return false;
