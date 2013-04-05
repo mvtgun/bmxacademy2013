@@ -303,9 +303,15 @@ p{
     margin: 0 auto ;
     margin-top: 400px;
     margin-bottom: 300px;
-       
 }
 
+
+#_register, #_contact {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+}
 
 /* novinky */
 
