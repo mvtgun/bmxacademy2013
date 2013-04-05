@@ -64,6 +64,19 @@ p{
     margin-top: -400px;       
 }
 
+#head.small{
+    width: 225px;
+    height: 91px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/logo_small.png);
+    position: fixed;
+    margin-top: -400px;
+    z-index: 0;
+}
+
+
 #head span{
     display: none; 
     text-align: center;         
@@ -119,6 +132,11 @@ p{
 
 
 /*menu*/
+
+.menuActual {
+    color: #e3e3e3;
+    background: url(../images/podtrzeni.jpg) repeat-x center bottom;
+}
 
 .menu{
     position: relative;
@@ -329,27 +347,28 @@ p{
     margin-left: 20px;          
 }
 
+
 .nadpis_new{
     display: block;
-    width: 500px;
+    width: 470px;
     margin-left: 20px;
     margin-top: 0px;
     height: auto;
     line-height: 35px;
     font-size: 25px;
     color: white;
-    float: left;
+    /*float: left;*/
     font-weight: bold;           
 }
 
 .popis_new{
     display: block;
-    width: 500px;
+    width: 470px;
     margin-left: 20px;
     margin-top: 20px;
     text-align: justify;
     line-height: 23px;
-    float: left;
+    /*float: left;*/
 
 }
 
