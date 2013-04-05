@@ -112,13 +112,12 @@ $(document).keydown(function (event) {
     }
 });
 
+$('a#_register').css('margin-top', (-(($(window).height()-$("#register").parent().height()) / 2)-60));
+$('a#_contact').css('margin-top', (-(($(window).height()-$("#contact").parent().height()) / 2)-60));
+
 scroller.detectPositionDown();
 scroller.toActual();
 
-setInterval(function(){
-    if (window.location.hash == "#register") { scroller.scrollTo(5800); window.location.hash = ""; }
-    if (window.location.hash == "#contact") { scroller.scrollTo(5020); window.location.hash = ""; }
-}, 40)
 
 // Tabs
 
