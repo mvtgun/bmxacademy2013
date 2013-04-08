@@ -4,10 +4,34 @@ padding: 0;
 }
 
 body{
-    background: black url(../images/b.jpg) repeat fixed 50% 0px;
-    font-family: Arial, Verdana;
+    font-family: 'Arial', sans-serif;
+    background: black url("../images/background.jpg") fixed repeat;
     color: white;
-    font-size: 12px;    
+    font-size: 11px;
+    min-width:1000px;
+    min-height:1000px;
+}
+
+h1,h2
+{
+    font-family: 'Abel', cursive;
+}
+
+
+div.wrapper#top{
+    text-align: center;
+    z-index: 2;
+}
+
+
+h3 {
+    font-size: 45pt;
+    color: #E3453F;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 75pt;
 }
 
 /* obecna cast stylu pro cely dokument*/
@@ -60,9 +84,11 @@ p{
     margin-left: auto;
     margin-right: auto;
     background-image: url(../images/logo.png);
-    position: fixed; 
-    margin-top: -400px;       
+    position: fixed;
+    margin-top: -400px;
+    z-index: 0;
 }
+
 
 #head.small{
     width: 225px;
@@ -76,7 +102,6 @@ p{
     z-index: 0;
 }
 
-
 #head span{
     display: none; 
     text-align: center;         
@@ -88,10 +113,10 @@ p{
     height: 45px;
     margin-top: -400px;
     position: fixed;
-    z-index: 20;         
+    z-index: 0;
 }
 
-.icon_home, .icon_fcb, .icon_yt, .information{
+.icon_home, .icon_fcb, .icon_yt{
     width: 40px;
     height: 45px;
     float: right;       
@@ -122,26 +147,18 @@ p{
     background-position: 0px -45px;                
 }
 
-.information{
-    background-image: url(../images/info.png);         
-}
-
-.information:hover{
-    background-position: 0px -45px;            
-}
 
 
 /*menu*/
 
+.menu{
+    margin-top: -50px;
+    position: absolute;
+}
+
 .menuActual {
     color: #e3e3e3;
     background: url(../images/podtrzeni.jpg) repeat-x center bottom;
-}
-
-.menu{
-    position: relative;
-    float: left;
-    margin-top: -60px;     
 }
 
 .menu ul{
@@ -172,7 +189,7 @@ p{
 
 .menu ul li a:hover{
     color: #e3e3e3;
-    background: url(../images/podtrzeni.jpg) repeat-x center bottom;                   
+    background: url(../images/podtrzeni.jpg) repeat-x center bottom;
 }
 
 .pomlcka{
@@ -187,13 +204,15 @@ p{
     width: 100%;
     height: 394px;
     background-image: url(../images/b_page.png);
-    background-repeat: repeat-x;     
+    background-repeat: repeat-x;
+    z-index: 3;
 }
 
 .wrapper{
     width: 960px;
     height: auto;
-    margin: 0px auto 0px auto;    
+    margin: 0px auto 0px auto;
+    z-index: 2;
 }
 
 .wrapper .p_kratky{
@@ -213,7 +232,7 @@ p{
     display: block;
     margin-top: 20px;
     text-align: justify;
-     margin-right: 20px;         
+    margin-right: 20px;
 }
 
 
@@ -225,12 +244,12 @@ p{
 }
 
 .prostredek{
-    width: 378px; 
+    width: 378px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 400px;
-                
+    z-index: 2;
 }
 
 
@@ -239,32 +258,41 @@ p{
 {
     bottom: -5px;
     width: 100%;
-    z-index: 10 ;
+    z-index: 1000 ;
     position: fixed;
 }
 
-.down
+.down, .up
 {   
     display: block;
     width: 40px;
     height: 42px;
     position: relative;
     margin: 0 auto ;    
-    background: transparent url(../images/downer.png) no-repeat 0 0;
 }
 
-.down:hover
+.down{
+    background: transparent url(../images/downer.png) no-repeat 0 0;
+
+}
+
+.up{
+    background: transparent url(../images/downer2.png) no-repeat 0 0;
+}
+
+.down:hover .up:hover
 {   
     background-position: 0px -41px;
 }
 
-.down span{
+.down span, .up span{
     display: none;          
 }
 
+
 .page_downer
 {
-    
+    z-index: 3;
     display: block;
     width: 100%;
     min-height: 394px;
@@ -274,10 +302,16 @@ p{
     position: relative;
     margin: 0 auto ;
     margin-top: 400px;
-    margin-bottom: 100px;
-       
+    margin-bottom: 300px;
 }
 
+
+#_register, #_contact {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+}
 
 /* novinky */
 
@@ -300,58 +334,26 @@ p{
     height: 340px;
     float: left;
      
-}       
-
-.sipka_new_left{
-    display: block;
-    width: 17px;
-    height: 62px;
-    float: left;
-    margin-top: 150px;
-    background-image: url(../images/sipka_left.png);
-    background-position: 0px -62px; 
-              
 }
 
-.sipka_new_left:hover{
-    background-position: 0px 0px;                     
-  }
-                     
-.sipka_new_right:hover
-{
-   background-position: 0px 0px;                  
-}
-
-.sipka_new_right{
-    display: block;
-    width: 17px;
-    height: 62px;
-    float: right;
-    margin-top: 150px;
-    background-image: url(../images/sipka_right.png);
-    background-position: 0px -62px; 
-              
-}
 
 .new{
-    width: 920px;
-    height: 300px;
+    width: 901px;
     margin-top: 20px;
+    height: 300px;
     float: left;
-
 }
 
 .photo_new{
-    height: 280px;
     margin-top: 8px;
-    margin-left: 20px;          
+    margin-left: 10px;          
+    margin-right: 30px;
 }
-
 
 .nadpis_new{
     display: block;
     width: 470px;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     margin-top: 0px;
     height: auto;
     line-height: 35px;
@@ -364,7 +366,7 @@ p{
 .popis_new{
     display: block;
     width: 470px;
-    margin-left: 20px;
+    /*margin-left: 20px;*/
     margin-top: 20px;
     text-align: justify;
     line-height: 23px;
@@ -441,22 +443,11 @@ p{
 
 #videogalerie{
     width: 910px;
-    float: left;
-    margin-left: 10px;
-    margin-top: 20px; 
-           
 }
 
 #video_panel{
     background-color: blue;
     margin-left: -22px;            
-}
-
-.video{
-    float: left;
-    margin-right: 0px;
-    margin-left: 20px;
-    margin-top: 0px;      
 }
 
 /* formular */
@@ -552,120 +543,80 @@ p{
 
 .partner{
     float: left;
-    margin-right: 30px;        
-}
-
-.odsazena_loga{
-   margin-top: 20px;
-   margin-bottom: 30px;
-   width: 720px;
-   display: block;
-   height: 80px;
-   margin-left: auto;
-   margin-right: auto;
-           
+    margin-right: 20px;        
 }
 
 /* copyright */
 
+#dummy {
+    height:500px;
+    width:100px;
+}
 
 .kopy
 {
      font-weight: bold;
     position: fixed;
     bottom: 20px;
-    right:20px
+    right:20px;
 }
-
+.kopy a {
+    color: white;
+}
 /* stylus o campu */
-
-
 
 .odrazky{
     width: 100%;
     height: auto;
     float: left;
-    margin-top: 0px; 
-    margin-left: 0px;
+    margin-top: 10px;
+    margin-left: px;
     margin-bottom: 10px;
     padding-left: 10px;
-    list-style-image: url(../images/odrazka.png);
-       
-} 
 
-.odkaz{
-    float: left;
-    margin-top: 10px;
-    position: relative;      
 }
-
 
 .polovina{
     width: 300px;
     height: auto;
-    float: left;  
- 
-}
-         
-.polovina_big{
-    width: 720px;
-    height: auto;
-    float: left; 
-        margin-bottom: 5px;      
-}         
-
-.beran{
-    float: right; 
-    width: 189px;
-    height: auto;
-    margin-top: 0px;    
-}
-
-.beran_foto{
-    border: solid 2px #c40808;
-                  
-}
-
-.beran p{
-    display: block;
     float: left;
-    width: 189px;
-    text-align: center;
- 
 }
 
-.beran_popis strong{
-    font-size: 15px;                    
+.odrazky h2{
+    line-height: 40px;
+    margin-left: -10px;
 }
-
 
 .odrazky li{
     line-height: 20px;
-    margin-bottom: 5px;          
+    margin-bottom: 2px;
 }
 
 .tab-pane{
-    width: 720px;
+    width: 100%;
     height: auto;
-    float: left; 
+    float: left;
     margin-left: px;
     margin-bottom: 10px;
     text-align: justify;
-    line-height: 20px;  
-    font-size: 13px;        
-}
-
-.tab-pane h3{
-    line-height: 40px;            
+    line-height: 20px;
 }
 
 .tab-pane h2{
     line-height: 40px;
-    margin-top: 10px;               
 }
 
 #predchozi_camp{
-    float: left;                 
+    float: left;
+}
+
+#video {
+    padding-top: 40px;
+}
+
+#video .menu
+{
+    margin-top: -90px;
 }
 
 #dalsi_camp a, #predchozi_camp a{
@@ -677,49 +628,55 @@ p{
     font-weight: bold;
     color: white;
     text-decoration: none;
-    font-size: 20px;         
+    font-size: 20px;
 }
 
 #dalsi_camp a:hover{
     color: #e3e3e3;
-    text-decoration: underline;                 
+    text-decoration: underline;
 }
- 
+
 #predchozi_camp a:hover{
     color: #e3e3e3;
-    text-decoration: underline;                 
- }
- 
- .nav-tabs{
+    text-decoration: underline;
+}
+
+.nav-tabs{
     float: left;
     width: 100%;
     margin-top: 20px;
-    list-style-type: none; 
-    
-       
+    list-style-type: none;
+
 }
 
 .nav-tabs li{
-    display: inline;        
+    display: inline;
 }
 
 .nav-tabs li.active a{
     float: left;
-    padding: 15px 15px 12px 15px;
+    padding: 15px 15px 15px 15px;
     border: solid  #df0445 2px;
-    color: white; 
-    margin-top: 1px; 
-     border-bottom: solid #df0445 2px;               
+    color: white;
+    margin-top: 4px;
+    border-bottom: solid #df0445 2px;
 }
 
 .nav-tabs li a{
     float: left;
+    margin-top: 6px;
     padding: 15px 15px 15px 15px;
     border: none;
-    border-bottom: solid #df0445 2px;  
+    border-bottom: solid #df0445 2px;
 }
 
 .nav-tabs li a:hover{
     color: white;
-    border-bottom: solid white 2px;                           
+    border-bottom: solid white 2px;
+}
+
+.form-error {
+    color: #DF0445;
+    font-size:20px;
+    margin-bottom: 10px;
 }
