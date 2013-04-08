@@ -32,13 +32,14 @@ class Participant(models.Model):
     birth_number = models.CharField(max_length=13)
     address = models.CharField(max_length=255)
     phone = models.CharField(max_length=16)
-    email = models.EmailField(max_length=64)
+    email = models.EmailField(max_length=64, unique=True)
     tshirt_size = models.CharField(max_length=8)
     cap_size = models.CharField(max_length=8)
     camp_variant = models.CharField(max_length=8)
     transfer = models.CharField(max_length=8)
     advance = models.BooleanField(verbose_name="Zaloha")
     payment = models.BooleanField(verbose_name="Platba")
+    note = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
         return u"%s %s" % (self.first_name, self.last_name)
