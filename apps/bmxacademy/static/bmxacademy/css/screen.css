@@ -116,11 +116,15 @@ p{
     z-index: 0;
 }
 
-.icon_home, .icon_fcb, .icon_yt{
+.information, .icon_home, .icon_fcb, .icon_yt{
     width: 40px;
     height: 45px;
     float: right;       
     margin-left: 5px; 
+}
+
+.information {
+background-image: url(../images/info.png);
 }
 
 .icon_home{
