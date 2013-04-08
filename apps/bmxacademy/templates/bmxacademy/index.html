@@ -32,7 +32,8 @@
 <div class="page_downer">
     <div class="wrapper" id="top">
         {% include "bmxacademy/menu.html" %}
-        {% include "bmxacademy/partners.html" %}
+        <img src="{{STATIC_URL}}bmxacademy/images/skatepark.png" alt="Skatepark Hradec Králové" class="middle">
+        <img src="{{STATIC_URL}}bmxacademy/images/napis.png" width="960px" alt="11. - 18. 2013" class="middle">
     </div>
     <!-- wrapper -->
 </div>
@@ -88,8 +89,7 @@
 <div class="page_downer">
     <div class="wrapper" id="partners">
         {% include "bmxacademy/menu.html" %}
-        <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/fallen_black.jpg" alt="fallen_logo" class="gen_partner"></a>
-        <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/koloseum.jpg" alt="fallen_logo" class="partner"></a>
+        {% include "bmxacademy/partners.html" %}
     </div>
     <!-- wrapper -->
 </div>
