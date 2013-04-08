@@ -699,13 +699,33 @@ background-image: url(../images/info.png);
     margin-bottom: 10px;
 }
 
+.beran{
+    float: right; 
+    width: 189px;
+    height: auto;
+    margin-top: 0px;    
+}
+
 .beran_foto{
     border: solid 2px #c40808;
                   
 }
 
 .sig{
+    float: left;
     position: absolute;
-    /*z-index: 10px;*/
-    margin-top: 230px;    
+    z-index: 10px;
+    margin-top: 160px;    
+}
+
+.beran p{
+    display: block;
+    float: left;
+    width: 189px;
+    text-align: center;
+ 
+}
+
+.beran_popis strong{
+    font-size: 15px;                    
 }
