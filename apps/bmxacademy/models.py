@@ -1,6 +1,13 @@
 from django.db import models
 from sorl.thumbnail import ImageField
 from image_cropping import ImageRatioField, ImageCropField
+import settings
+import urllib
+import os
+from django.core.files import File
+from django.core.files.temp import NamedTemporaryFile
+
+normpath = settings.normpath
 
 class New(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -17,10 +24,36 @@ class Video(models.Model):
     title = models.CharField(max_length=255)
     video_code = models.CharField(max_length=16)
 
+    img = ImageCropField(upload_to="bmxacademy/video/img", null=True, blank=True)
+    img_crop = ImageRatioField('img', '290x217')
+    img_is_uploaded = models.BooleanField()
+
     def thumbnail_url(self):
         return "http://img.youtube.com/vi/%s/0.jpg" % self.video_code
     def youtube_url(self):
         return "http://youtube.com/watch?v=%s" % self.video_code
+
+    def update_img2(self):
+        url = self.thumbnail_url()
+        file_name = os.path.split(url)[1]
+        file_path = normpath(settings.PROJECT_ROOT, "tmp", file_name)
+        urllib.urlretrieve(url, file_path)
+        img_file = file(file_path, "r")
+        self.img.save(file_name, File(file(file_path)), save=False)
+
+    def update_img(self):
+        self.img_is_uploaded = True
+        url = self.thumbnail_url()
+        file_name = os.path.split(url)[1]
+        path = normpath(settings.PROJECT_ROOT, "static/uploads/bmxacademy/video/img", file_name)
+        urllib.urlretrieve(url, path)
+        f = File(file(path, 'r'))
+        self.img.save(file_name, f)
+
+    def save(self):
+        super(Video, self).save()
+        if not self.img_is_uploaded:
+            self.update_img()
 
     def __unicode__(self):
         return u"%s %s" % (self.title, self.pub_date)
