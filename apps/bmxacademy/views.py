@@ -24,7 +24,7 @@ def index_view(request, template="bmxacademy/index.html"):
     registration_form = RegistrationForm(request.POST or None, prefix="registration")
     if registration_form.is_valid():
         obj = registration_form.save()
-        d = { "first_name": obj.first_name, "last_name": obj.last_name, "email": obj.email, "phone": obj.phone, }
+        d = { "name": obj.name, "email": obj.email, "phone": obj.phone, }
         Email.objects.get(id_name="registration").send(settings.NOTIFY_MAIL, d)
         Email.objects.get(id_name="registration_participant").send(obj.email, d)
         registration_form_done = True
