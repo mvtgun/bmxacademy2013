@@ -5,7 +5,7 @@ padding: 0;
 
 body{
     font-family: 'Arial', sans-serif;
-    background: black url("../images/background.jpg") fixed repeat;
+    background: black url("../images/b.jpg") fixed repeat;
     color: white;
     font-size: 11px;
     min-width:1000px;
@@ -593,10 +593,11 @@ p{
 }
 
 .tab-pane{
-    width: 100%;
+    width: 720px;
     height: auto;
+    min-height: 300px;
     float: left;
-    margin-left: px;
+    margin-right: 30px;
     margin-bottom: 10px;
     text-align: justify;
     line-height: 20px;
