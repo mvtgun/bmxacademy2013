@@ -27,8 +27,7 @@ class Video(models.Model):
 
 class Participant(models.Model):
     registration_date = models.DateTimeField(auto_now_add=True)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     birth_number = models.CharField(max_length=13)
     address = models.CharField(max_length=255)
     phone = models.CharField(max_length=16)
@@ -42,7 +41,7 @@ class Participant(models.Model):
     note = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
-        return u"%s %s" % (self.first_name, self.last_name)
+        return u"%s" % (self.name)
 
 class Message(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
