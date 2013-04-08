@@ -7,7 +7,7 @@ class NewAdmin(ImageCroppingMixin, admin.ModelAdmin):
     pass
 
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ("name", "registration_date", "birth_number", "address", "phone",
+    list_display = ("name", "registration_date", "birth_number", "street", "city", "phone",
         "email", "tshirt_size", "cap_size", "camp_variant", "transfer", "advance", "payment")
     readonly_fields = ("registration_date", )
 

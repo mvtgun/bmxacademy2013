@@ -18,10 +18,10 @@
     {% endif %}
     {% csrf_token %}
     <div class="polozky left">
-        <p><input type="text" name="registration-first_name" value="{{registration_form.first_name.value}}" placeholder="Jméno" class="pole"></p>
-        <p><input type="text" name="registration-last_name"  value="{{registration_form.last_name.value}}" placeholder="Příjmení" class="pole"></p>
+        <p><input type="text" name="registration-name" value="{{registration_form.name.value}}" placeholder="Jméno a příjmení" class="pole"></p>
+        <p><input type="text"  value="{{registration_form.street.value}}"   name="registration-street" placeholder="Ulice, č.p." class="pole"></p>
+        <p><input type="text" name="registration-city"  value="{{registration_form.city.value}}" placeholder="Město, PSČ" class="pole"></p>
         <p><input type="text" value="{{registration_form.birth_number.value}}"  name="registration-birth_number" placeholder="Rodné číslo" class="pole"></p>
-        <p><input type="text"  value="{{registration_form.address.value}}"   name="registration-address" placeholder="Adresa" class="pole"></p>
         <p><input  value="{{registration_form.phone.value}}"  type="text" name="registration-phone" placeholder="Tel. číslo" class="pole"></p>
         <p>&nbsp;&nbsp;Všechny údaje jsou povinné.</p>
     </div>
