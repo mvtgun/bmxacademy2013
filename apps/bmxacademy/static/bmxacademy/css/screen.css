@@ -535,6 +535,7 @@ background-image: url(../images/info.png);
              
 }
 
+
 /* partneri */
 
 .gen_partner{
@@ -547,7 +548,18 @@ background-image: url(../images/info.png);
 
 .partner{
     float: left;
-    margin-right: 20px;        
+    margin-right: 30px;        
+}
+
+.odsazena_loga{
+   margin-top: 20px;
+   margin-bottom: 30px;
+   width: 720px;
+   display: block;
+   height: 80px;
+   margin-left: auto;
+   margin-right: auto;
+           
 }
 
 /* copyright */
