@@ -15,7 +15,12 @@ from django.core.mail import send_mail
 from models import New, Video, Email, Gallery
 from forms import RegistrationForm, MessageForm
 
+from helpers import show_intro
+
 def index_view(request, template="bmxacademy/index.html"):
+    if show_intro(request):
+        return HttpResponseRedirect("/intro/")
+
     new_qs = New.objects.order_by("-pk")
     video_qs = Video.objects.order_by("-pk")
     registration_form_done = False
@@ -70,3 +75,11 @@ def gallery_json(request, gallery_pk):
         })
     response = json.dumps(out)
     return HttpResponse(response, mimetype="application/json")
+
+
+
+def intro_view(request, template="bmxacademy/intro.html"):
+    return render_to_response(template, 
+        {
+        },
+        context_instance=RequestContext(request))

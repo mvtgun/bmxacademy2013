@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import New, Video, Participant, Message, Email, Gallery, Picture
+from models import New, Video, Participant, Message, Email, Gallery, Picture, Intro
 from sorl.thumbnail.admin import AdminImageMixin
 from image_cropping import ImageCroppingMixin
 
@@ -28,3 +28,4 @@ admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Picture, PictureAdmin)
 admin.site.register(Message)
 admin.site.register(Email)
+admin.site.register(Intro)

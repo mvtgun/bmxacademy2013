@@ -9,6 +9,12 @@ from django.core.files.temp import NamedTemporaryFile
 
 normpath = settings.normpath
 
+class Intro(models.Model):
+    ip = models.IPAddressField()
+
+    def __unicode__(self):
+        return u"%s" % self.ip
+
 class New(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
