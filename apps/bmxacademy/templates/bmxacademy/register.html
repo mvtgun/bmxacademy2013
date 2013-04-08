@@ -7,15 +7,6 @@
 {% else %}
 <form class="form" method="post" action="#register">
     <input type="hidden" name="form" value="registration">
-    {% if registration_form.errors %}
-        {% if registration_form.errors.email %}
-            <p class="form-error">Zadejte validní email</p>
-        {% endif %}
-        {% if registration_form.errors.accept %}
-            <p class="form-error">Musíte souhlasit s podmínkami</p>
-        {% endif %}
-        <p class="form-error">Zadejte prosím všechny povinné položky</p>
-    {% endif %}
     {% csrf_token %}
     <div class="polozky left">
         <p><input type="text" name="registration-name" value="{{registration_form.name.value}}" placeholder="Jméno a příjmení" class="pole"></p>
@@ -76,5 +67,15 @@
     <p><strong>Michael Beran</strong> <br>
 doporučuje BMX Academy</p>
          </div>
+
+    {% if registration_form.errors %}
+        {% if registration_form.errors.email %}
+            <p class="form-error">Zadejte správný formát vašeho emailu.</p>
+        {% endif %}
+        {% if registration_form.errors.accept %}
+            <p class="form-error">Musíte souhlasit s podmínkami.</p>
+        {% endif %}
+        <p class="form-error">Zadejte prosím všechny povinné položky</p>
+    {% endif %}
 
 {% endif %}
