@@ -686,3 +686,14 @@ background-image: url(../images/info.png);
     font-size:20px;
     margin-bottom: 10px;
 }
+
+.beran_foto{
+    border: solid 2px #c40808;
+                  
+}
+
+.sig{
+    position: absolute;
+    /*z-index: 10px;*/
+    margin-top: 230px;    
+}
