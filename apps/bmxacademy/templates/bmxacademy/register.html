@@ -38,16 +38,16 @@
             </select>
         <p><select class="selecter"  value="{{registration_form.cap_size.value}}"  name="registration-cap_size">
                 <option value="" {% if registration_form.cap_size.value == "" %}selected="selected"{% endif %}>Velikost čepice</option>
-                <option {% if registration_form.cap_size.value == "1" %}selected="selected"{% endif %} value="1">67/8</option>
-                <option {% if registration_form.cap_size.value == "2" %}selected="selected"{% endif %} value="2">7</option>
-                <option {% if registration_form.cap_size.value == "3" %}selected="selected"{% endif %} value="3">7 3/4</option>
-                <option {% if registration_form.cap_size.value == "4" %}selected="selected"{% endif %} value="4">7 3/8</option>
-                <option {% if registration_form.cap_size.value == "5" %}selected="selected"{% endif %} value="5">71/2</option>
-                <option {% if registration_form.cap_size.value == "6" %}selected="selected"{% endif %} value="6">71/4</option>
-                <option {% if registration_form.cap_size.value == "7" %}selected="selected"{% endif %} value="7">73/4</option>
-                <option {% if registration_form.cap_size.value == "8" %}selected="selected"{% endif %} value="8">73/8</option>
-                <option {% if registration_form.cap_size.value == "9" %}selected="selected"{% endif %} value="9">75/8</option>
-                <option {% if registration_form.cap_size.value == "10" %}selected="selected"{% endif %} value="10">8</option>
+                <option {% if registration_form.cap_size.value == "1" %}selected="selected"{% endif %} value="1">6 7/8 (obvod hlavy - 54,9cm)</option>
+                <option {% if registration_form.cap_size.value == "2" %}selected="selected"{% endif %} value="2">7 (obvod hlavy - 55,8cm)</option>
+                <option {% if registration_form.cap_size.value == "3" %}selected="selected"{% endif %} value="3">7 3/4 (obvod hlavy - 56,8cm)</option>
+                <option {% if registration_form.cap_size.value == "4" %}selected="selected"{% endif %} value="4">7 3/8 (obvod hlavy - 57,7cm)</option>
+                <option {% if registration_form.cap_size.value == "5" %}selected="selected"{% endif %} value="5">7 1/2 (obvod hlavy - 58,7cm)</option>
+                <option {% if registration_form.cap_size.value == "6" %}selected="selected"{% endif %} value="6">7 1/4 (obvod hlavy - 59,6cm)</option>
+                <option {% if registration_form.cap_size.value == "7" %}selected="selected"{% endif %} value="7">7 3/4 (obvod hlavy - 60,6cm)</option>
+                <option {% if registration_form.cap_size.value == "8" %}selected="selected"{% endif %} value="8">7 3/8 (obvod hlavy - 61,5cm)</option>
+                <option {% if registration_form.cap_size.value == "9" %}selected="selected"{% endif %} value="9">7 5/8 (obvod hlavy - 62,5cm)</option>
+                <option {% if registration_form.cap_size.value == "10" %}selected="selected"{% endif %} value="10">8 (obvod hlavy - 63,5cm)</option>
             </select>
         <p><select class="selecter"  name="registration-camp_variant">
                 <option value="" {% if registration_form.camp_variant.value == "" %}selected="selected"{% endif %}>Varianta campu</option>
@@ -56,9 +56,12 @@
             </select>
             <p><select class="selecter" value="{{registration_form.transfer.value}}"  name="registration-transfer">
                 <option value="" selected="selected">Doprava</option>
-                <option value="ne">ne</option>
-                <option value="oboje">cesta tam i zpět (pouze pro 8 denní verzy)</option>
-                <option value="tam">pouze cesta na academii</option>
+                <option value="vlastni">vlastní</option>
+                <option value="plzen">BMX Academy z Plzně</option>
+                <option value="praha">BMX Academy z Prahy</option>
+                <option value="jihlava">BMX Academy z Jihlavy</option>
+                <option value="brno">BMX Academy z Brna</option>
+                <option value="Bratislava">BMX Academy z Bratislavy</option>
             </select>
         <p>&nbsp;&nbsp;<input type="checkbox" name="registration-accept" value="on"> Souhlasím s <a href="#" target="blank">pravidly akce</a>.</p>
         <p><input type="submit" value="Registrovat" class="tlacitko right tlacitko_reg"></p>
