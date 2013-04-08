@@ -1,10 +1,4 @@
 <!-- menu -->
-{% if registration_form_done %}
-    <p><br><br>
-    Registrace proběhla úspěšne. V emailu máte podrobnější informace.
-    <br>S pozdravem, Team BMX Academy
-    </p>
-{% else %}
 <form class="form" method="post" action="#register">
     <input type="hidden" name="form" value="registration">
     {% csrf_token %}
@@ -47,14 +41,14 @@
             </select>
             <p><select class="selecter" value="{{registration_form.transfer.value}}"  name="registration-transfer">
                 <option value="" selected="selected">Doprava</option>
-                <option value="vlastni">vlastní</option>
-                <option value="plzen">BMX Academy z Plzně</option>
-                <option value="praha">BMX Academy z Prahy</option>
-                <option value="jihlava">BMX Academy z Jihlavy</option>
-                <option value="brno">BMX Academy z Brna</option>
-                <option value="Bratislava">BMX Academy z Bratislavy</option>
+                <option {% if registration_form.transfer.value == "vlastni" %}selected="selected"{% endif %} value="vlastni">vlastní</option>
+                <option {% if registration_form.transfer.value == "plzen" %}selected="selected"{% endif %} value="plzen">BMX Academy z Plzně</option>
+                <option {% if registration_form.transfer.value == "praha" %}selected="selected"{% endif %} value="praha">BMX Academy z Prahy</option>
+                <option {% if registration_form.transfer.value == "jihlava" %}selected="selected"{% endif %} value="jihlava">BMX Academy z Jihlavy</option>
+                <option {% if registration_form.transfer.value == "brno" %}selected="selected"{% endif %} value="brno">BMX Academy z Brna</option>
+                <option {% if registration_form.transfer.value == "bratislava" %}selected="selected"{% endif %} value="Bratislava">BMX Academy z Bratislavy</option>
             </select>
-        <p>&nbsp;&nbsp;<input type="checkbox" name="registration-accept" value="on"> Souhlasím s <a href="#" target="blank">pravidly akce</a>.</p>
+        <p>&nbsp;&nbsp;<input type="checkbox" name="registration-accept" {% if registration_form.accept.value == "on" %}checked="checked"{%endif%} value="on"> Souhlasím s <a href="#" target="blank">pravidly akce</a>.</p>
         <p><input type="submit" value="Registrovat" class="tlacitko right tlacitko_reg"></p>
         <div style="clear:both;"></div>
     </div>
@@ -67,15 +61,21 @@
     <p><strong>Michael Beran</strong> <br>
 doporučuje BMX Academy</p>
          </div>
-
-    {% if registration_form.errors %}
-        {% if registration_form.errors.email %}
+    {% if registration_form.errors.name or registration_form.errors.name or registration_form.errors.address or registration_form.errors.city or registration_form.errors.birth_number or registration_form.errors.phone or registration_form.errors.email or registration_form.errors.tshirt_size or registration_form.errors.cap_size or registration_form.errors.camp_variant or registration_form.errors.transfer %}
+        {%if registration_form.errors.email.0 == "Položka Participant s touto hodnotou v poli Email již existuje."%}
+            <p class="form-error">Registrace pod tímto emailem již existuje.</p>
+        {% elif registration_form.errors.email.0 == "Vložte platnou e-mailovou adresu." %}
             <p class="form-error">Zadejte správný formát vašeho emailu.</p>
+        {% else %}
+        <p class="form-error">Zadejte prosím všechny povinné položky.</p>
         {% endif %}
-        {% if registration_form.errors.accept %}
-            <p class="form-error">Musíte souhlasit s podmínkami.</p>
-        {% endif %}
-        <p class="form-error">Zadejte prosím všechny povinné položky</p>
+    {% endif %}
+    {% if registration_form.errors.accept %}
+        <p class="form-error">Musíte souhlasit s podmínkami.</p>
     {% endif %}
 
+{% if registration_form_done %}
+    <p class="form-error"><br><br>
+    Registrace proběhla úspěšne.
+    <br>V emailu máte podrobnější informace.</p>
 {% endif %}
