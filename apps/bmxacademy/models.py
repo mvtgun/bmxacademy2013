@@ -33,14 +33,6 @@ class Video(models.Model):
     def youtube_url(self):
         return "http://youtube.com/watch?v=%s" % self.video_code
 
-    def update_img2(self):
-        url = self.thumbnail_url()
-        file_name = os.path.split(url)[1]
-        file_path = normpath(settings.PROJECT_ROOT, "tmp", file_name)
-        urllib.urlretrieve(url, file_path)
-        img_file = file(file_path, "r")
-        self.img.save(file_name, File(file(file_path)), save=False)
-
     def update_img(self):
         self.img_is_uploaded = True
         url = self.thumbnail_url()
