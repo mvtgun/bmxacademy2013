@@ -1,9 +1,4 @@
-{% if message_form_done %}
-    <p class="form-error"><br><br>
-    Zprávu jsme přijaly a odpovíme co nejdříve to bude možné.
-    <br>S pozdravem, Team BMX Academy
-    </p>
-{% else %}
+
 <form class="form" method="post" action="#contact">
     {% if message_form.errors %}
         <p class="form-error">Zadejte prosím všechny povinné položky</p>
@@ -23,7 +18,7 @@
         <p><input type="submit" value="Odeslat" class="tlacitko right"></p>
     </div>
 </form>
-<div class="poradatel left">
+<div class="poradatel left" style="min-height:250px;">
     <h2>BMX Academy</h2>
     <p>Telefon: +420 608 844 878</p>
     <p>E-mail: info@bmxacademy.cz</p>
@@ -31,4 +26,7 @@
     <p>YouTube: <a href="http://www.youtube.com/bmxacademyCZ">BMX Academy</a></p>
     <br>
 </div>
-{% endif %}
+
+    <p class="form-error"><br><br>
+    Vaše zpráva byla úspěšne odeslána.
+    </p>
