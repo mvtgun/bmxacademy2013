@@ -70,13 +70,13 @@ doporučuje BMX Academy</p>
         {%if registration_form.errors.email.0 == "Položka Participant s touto hodnotou v poli Email již existuje."%}
             <p class="form-error">Registrace pod tímto emailem již existuje.</p>
         {% elif registration_form.errors.email.0 == "Vložte platnou e-mailovou adresu." %}
-            <p class="form-error">Zadejte správný formát vašeho emailu.</p>
+            <p class="form-error">Zadejte správný formát vašeho emailu!</p>
         {% else %}
-        <p class="form-error">Zadejte prosím všechny povinné položky.</p>
+        <p class="form-error">Zadejte prosím všechny povinné položky!</p>
         {% endif %}
     {% endif %}
     {% if registration_form.errors.accept %}
-        <p class="form-error">Musíte souhlasit s podmínkami.</p>
+        <p class="form-error">Musíte souhlasit s podmínkami!</p>
     {% endif %}
 
 {% if registration_form_done %}
