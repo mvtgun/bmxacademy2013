@@ -107,7 +107,7 @@ from django.core.mail import send_mail
 
 class Email(models.Model):
     id_name = models.CharField(max_length=255)
-    default_sender = models.EmailField(max_length=255)
+    default_sender = models.CharField(max_length=255)
     subject = models.CharField(max_length=255)
     message = models.TextField()
 
