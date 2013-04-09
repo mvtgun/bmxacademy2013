@@ -116,7 +116,8 @@
 </div>
 <!-- page -->
 <div id="dummy"></div>
-<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/jquery.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/lib/jquery-1.9.0.min.js"></script>
+<!-- <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/jquery.js"></script> -->
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/jquery.ui.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/wheel.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/touchwipe.js"></script>
@@ -129,6 +130,33 @@
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/bootstrap-tabs.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/videoSlider.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/scripts/other.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/source/jquery.fancybox.js"></script>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bmxacademy/fancybox/source/jquery.fancybox.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-buttons.css" />
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-buttons.js"></script>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-thumbs.css" />
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        console.log($('.fancybox-media').attr('rel', 'media-gallery'));
+        jQuery('.fancybox-media').attr('rel', 'media-gallery').fancybox({
+            openEffect : 'none',
+            closeEffect : 'none',
+            prevEffect : 'none',
+            nextEffect : 'none',
+            arrows : true,
+            helpers : {
+                media : {},
+                buttons : {}
+            }
+        });
+    });
+</script>
+<style type="text/css">
+.fancybox-skin {background-color: black;}
+</style>
 <script type="text/javascript">
 
 </script>

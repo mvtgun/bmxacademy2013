@@ -10,7 +10,7 @@
 
                             <div>
                                 
-                                <a href="{{video.youtube_url}}" target="blank"><img src="{% cropped_thumbnail video img_crop height=321 upscale %}" alt="video" width="290px" class="video"></a>
+                                <a class="fancybox-media" href="{{video.youtube_url}}"><img src="{% cropped_thumbnail video img_crop height=321 upscale %}" alt="video" width="290px" class="video"></a>
                             </div>
                         </div>
                     {% endfor %}
