@@ -9,8 +9,9 @@
                             </h4>
 
                             <div>
-                                
-                                <a class="fancybox-media" href="{{video.youtube_url}}"><img src="{% cropped_thumbnail video img_crop height=321 upscale %}" alt="video" width="290px" class="video"></a>
+                                 <a class="fancybox-media" href="{{video.youtube_url}}"  >
+                                <img src="/static/static/bmxacademy/images/play.png" style="position: absolute;left: 120px;top:120px;z-index:1;">
+                               <img src="{% cropped_thumbnail video img_crop height=321 upscale %}" alt="video" width="290px" class="video" style="position: absolute;left: 0;"></a>
                             </div>
                         </div>
                     {% endfor %}
