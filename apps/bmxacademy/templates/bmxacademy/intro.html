@@ -9,19 +9,24 @@
     <title>BMX Academy s Michalem Beranem, 2013</title>
     <link rel="icon" href="http://michaelsvarc.com/bmx/favicon.ico" type="image/x-icon">
     <style type="text/css">
-    body {background-color: black;}
-    a {color: white; font-family: arial; text-decoration: none;}
-    a:hover{color: white; text-decoration: none;}
-    #player {margin-top: 30px;}
+    html, body { height: 99%; width: 99%; background-color: black;}
+    #centerOuter { height: 99%; width: 99%; display: table; vertical-align: middle; }
+    #centerInner { position: relative; vertical-align: middle; display: table-cell; }
+    #centerContent {margin-left: auto; margin-right: auto; position: relative; }
+    #centerContent {width: 1068px; }
     </style>
 </head>
 <body>
-<center>
+<div id="centerOuter"><div id="centerInner"><div id="centerContent">
     <!-- START USERBODY -->
-    <embed id="player" width="960" height="540" src="http://www.youtube.com/v/NEZ33c4Ugww" type="application/x-shockwave-flash">
-    </embed>
-    <br><a href="/" style="font-size:25px;">CLOSE</a>
+    <video src="/static/static/intro.mp4" style="width:1068px;height:600px;" autoplay>
     <!-- END USERBODY -->
-</center>
+</div></div></div>
+
+    <script type="text/javascript">
+    setTimeout(function(){
+        window.location.href = "/";
+    }, 36000);
+    </script>
 </body>
 </html>
