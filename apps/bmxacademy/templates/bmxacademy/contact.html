@@ -1,5 +1,7 @@
+{% include "bmxacademy/iframe.html" %}
+<table><tr><td>
 
-<form class="form" method="post" action="#contact">
+<form class="form" method="post" action="">
     
     {% csrf_token %}
     <input type="hidden" name="form" value="message">
@@ -24,6 +26,9 @@
     <br>
 </div>
 
+
+</td></tr>
+<tr><td>
     {% if message_form_done %}
         <p class="form-error">Vaše zpráva byla úspěšne odeslána.</p>
     {%endif%}
@@ -35,3 +40,6 @@
     {% if message_form.errors.name or message_form.errors.text  %}
         <p class="form-error">Zadejte prosím všechny povinné položky.</p>
     {% endif %}
+
+
+</td></tr></table>

@@ -15,7 +15,7 @@ from django.core.mail import send_mail
 from models import New, Video, Email, Gallery
 from forms import RegistrationForm, MessageForm
 
-from helpers import show_intro
+from helpers import show_intro, registration_form_process, contact_form_process
 
 def index_view(request, template="bmxacademy/index.html"):
     if show_intro(request):
@@ -81,5 +81,43 @@ def gallery_json(request, gallery_pk):
 def intro_view(request, template="bmxacademy/intro.html"):
     return render_to_response(template, 
         {
+        },
+        context_instance=RequestContext(request))
+
+def contact_view(request, template="bmxacademy/contact.html"):
+    registration_form_done, registration_form = registration_form_process(request)
+    message_form_done, message_form = contact_form_process(request)
+    
+    if not request.POST:
+        registration_form = None
+        message_form = None
+    else:
+        if request.POST["form"] == "message":
+            registration_form = None
+        if request.POST["form"] == "registration":
+            message_form = None
+    return render_to_response(template, 
+        {
+            "message_form": message_form,
+            "message_form_done": message_form_done,
+        },
+        context_instance=RequestContext(request))
+
+def registration_view(request, template="bmxacademy/register.html"):
+    registration_form_done, registration_form = registration_form_process(request)
+    message_form_done, message_form = contact_form_process(request)
+
+    if not request.POST:
+        registration_form = None
+        message_form = None
+    else:
+        if request.POST["form"] == "message":
+            registration_form = None
+        if request.POST["form"] == "registration":
+            message_form = None
+    return render_to_response(template, 
+        {
+            "registration_form": registration_form,
+            "registration_form_done": registration_form_done,
         },
         context_instance=RequestContext(request))
