@@ -404,6 +404,25 @@ background-image: url(../images/info.png);
      margin-left: 15px;    
 }
 
+.prepinani span{
+    font-size: 20px;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    font-weight: bold;
+                   
+}
+
+.prepinani span:hover{
+    color: #e3e3e3;
+    cursor: pointer;
+    text-decoration: underline;                       
+}
+
+
+
 .prepinani span a{
     font-size: 20px;
     color: white;
@@ -411,11 +430,13 @@ background-image: url(../images/info.png);
     text-align: center;
     text-decoration: none;
     float: left;
+    font-weight: bold;
                    
 }
 
 .prepinani span a:hover{
     color: #e3e3e3;
+    cursor: pointer;
     text-decoration: underline;                       
 }
 
@@ -442,6 +463,7 @@ background-image: url(../images/info.png);
     margin-left: 8px;
     margin-right: 8px;                  
 }
+
 
 /* videogalerie */
 

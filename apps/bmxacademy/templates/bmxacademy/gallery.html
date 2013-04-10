@@ -1,32 +1,55 @@
+{% load cropping %}
+<link rel="stylesheet" href="/static/static/bmxacademy/mediabox/mediabox/mediaboxAdv-Dark.css">
+<script type="text/javascript" src="/static/static/bmxacademy/mediabox/mootools-core-1.4.5-full-nocompat-yc.js"></script>
+<script type="text/javascript" src="/static/static/bmxacademy/mediabox/mootols-more.js"></script>
+<script type="text/javascript" src="/static/static/bmxacademy/mediabox/Fx.CSS.js"></script>
+<script type="text/javascript" src="/static/static/bmxacademy/mediabox/mediabox/mediaboxAdv.js"></script>
+<script type="text/javascript" src="/static/static/bmxacademy/mediabox/general.js"></script>
+<style type="text/css">
+#in {
+    height: 316px;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+}
+
+#in > div {
+    height: 316px;
+    position: absolute;
+    width: 960px;
+}
+
+#in div a img {
+    display: block;
+    position: absolute;
+}
+</style>
 <div id="fotogalerie">
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-            <a href="index.php"><img src="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg" alt="fotka" class="photo"></a>
-        </div>
-        <!-- fotogalerie -->
+    <div id="in">
+        {% for part in gallery %}
+            <div>
+                {% for img in part %}
+                    <a href="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg"><img src="{% cropped_thumbnail img img_crop height=127 upscale %}" alt="fotka" class="photo"></a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+<!-- fotogalerie -->
 
 
-        <div class="prepinani left"><span><a href="index.php">Předchozí</a></span><img
-                src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg"
-                alt="pomlcka"
-                class="pomlcka_prepinani"><span><a
-                    href="index.php">Další</a></span>
-        </div>
-        <!-- prepinani -->
+<div class="prepinani left">
+      <span class="prev">Předchozí</span>
+        <img src="{{STATIC_URL}}bmxacademy/images/mnu_pomlcka.jpg" alt="pomlcka" class="pomlcka_prepinani">
+      <span class="next">Další</span>
+    </div><!-- prepinani -->  
 
-        <div class="prepinani right">
-            <!--
-            <span><a href="index.php">2012</a></span>
-            <img src="{{STATIC_URL}}bmxacademy/images/oddelovnik.png" alt="pomlcka" class="oddelovnik">
-            <span class="active"><a href="index.php">2013</a></span> -->
-        </div>
-        <!-- prepinani -->
+<!-- prepinani -->
+
+<div class="prepinani right">
+    <!--
+    <span><a href="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg">2012</a></span>
+    <img src="{{STATIC_URL}}bmxacademy/images/oddelovnik.png" alt="pomlcka" class="oddelovnik">
+    <span class="active"><a href="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg">2013</a></span> -->
+</div>
+<!-- prepinani -->
+</div>

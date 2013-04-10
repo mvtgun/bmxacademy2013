@@ -23,6 +23,7 @@ def index_view(request, template="bmxacademy/index.html"):
 
     new_qs = New.objects.order_by("-pk")
     video_qs = Video.objects.order_by("-pk")
+    gallery_qs = Gallery.objects.order_by("-pk")
     registration_form_done = False
     message_form_done  = False
 
@@ -52,12 +53,16 @@ def index_view(request, template="bmxacademy/index.html"):
         if request.POST["form"] == "registration":
             message_form = None
 
+    a = gallery_qs[0].picture_set.all()[:100]
+    gallery = [a[i:i+12] for i in range(0,len(a),12)]
     return render_to_response(template, 
         {
             "new_qs": new_qs,
             "video_qs": video_qs,
             "registration_form": registration_form,
             "message_form": message_form,
+            "gallery_qs": gallery_qs,
+            "gallery": gallery,
             "registration_form_done": registration_form_done,
             "message_form_done": message_form_done,
         },
