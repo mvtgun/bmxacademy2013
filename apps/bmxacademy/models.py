@@ -6,6 +6,7 @@ import urllib
 import os
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
+from sorl.thumbnail import get_thumbnail
 
 normpath = settings.normpath
 
@@ -92,6 +93,7 @@ class Gallery(models.Model):
     def __unicode__(self):
         return u"%s" % (self.name)
 
+
 class Picture(models.Model):
     gallery = models.ForeignKey(Gallery)
     img = ImageCropField(upload_to="bmxacademy/picture/img")
@@ -100,6 +102,8 @@ class Picture(models.Model):
     def __unicode__(self):
         return u"%s  %i" % (self.gallery.name, self.pk)
 
+    def large(self):
+        return get_thumbnail(self.img, '800x500', crop='center', quality=99)
 
 # Email
 from django.template import Template, Context

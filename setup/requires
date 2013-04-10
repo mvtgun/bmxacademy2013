@@ -4,3 +4,4 @@ south
 django-image-cropping
 jsonindex
 django-remote
+sorl-thumbnail

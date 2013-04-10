@@ -71,6 +71,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     
+    "sorl.thumbnail",
     "image_cropping",
     "easy_thumbnails",
     "remote_ajax",

@@ -146,6 +146,11 @@ doporučuje BMX Academy</p>
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-thumbs.css" />
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-thumbs.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}bmxacademy/fancybox/source/helpers/jquery.fancybox-media.js"></script>
+<!-- Arquivos utilizados pelo jQuery lightBox plugin -->
+<script type="text/javascript" src="{{STATIC_URL}}bmxacademy/jlb/script.js"></script>
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}bmxacademy/jlb/style.css" media="screen" />
+<!-- / fim dos arquivos utilizados pelo jQuery lightBox plugin -->
+
 <script type="text/javascript">
     $(document).ready(function() {
         console.log($('.fancybox-media').attr('rel', 'media-gallery'));
@@ -160,13 +165,14 @@ doporučuje BMX Academy</p>
                 buttons : {}
             }
         });
+
+        $('.jlb').lightBox();
+
     });
 </script>
 <style type="text/css">
 .fancybox-skin {background-color: black;}
 </style>
-<script type="text/javascript">
-
-</script>
+<script type="text/javascript"></script>
 </body>
 </html>

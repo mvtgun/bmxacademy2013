@@ -1,4 +1,4 @@
-{% load cropping %}
+{% load cropping thumbnail %}
 <link rel="stylesheet" href="/static/static/bmxacademy/mediabox/mediabox/mediaboxAdv-Dark.css">
 <script type="text/javascript" src="/static/static/bmxacademy/mediabox/mootools-core-1.4.5-full-nocompat-yc.js"></script>
 <script type="text/javascript" src="/static/static/bmxacademy/mediabox/mootols-more.js"></script>
@@ -29,7 +29,8 @@
         {% for part in gallery %}
             <div>
                 {% for img in part %}
-                    <a href="{{STATIC_URL}}bmxacademy/images/photo_foto.jpg"><img src="{% cropped_thumbnail img img_crop height=127 upscale %}" alt="fotka" class="photo"></a>
+                    <a href="{{ img.large.url }}" class="jlb" rel="lightbo" title="{{img.pk}}"><img src="{% cropped_thumbnail img img_crop height=127 upscale %}" alt="fotka" class="photo"></a>
+                    
                 {% endfor %}
             </div>
         {% endfor %}
@@ -53,3 +54,9 @@
 </div>
 <!-- prepinani -->
 </div>
+
+
+<!-- <script src="/static/static/bmxacademy/lightbox/js/jquery-1.7.2.min.js"></script> -->
+<!-- <script src="/static/static/bmxacademy/lightbox/js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="/static/static/bmxacademy/lightbox/js/jquery.smooth-scroll.min.js"></script>
+<script src="/static/static/bmxacademy/lightbox/js/lightbox.js"></script> -->
