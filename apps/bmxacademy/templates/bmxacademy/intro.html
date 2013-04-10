@@ -13,20 +13,23 @@
     #centerOuter { height: 99%; width: 99%; display: table; vertical-align: middle; }
     #centerInner { position: relative; vertical-align: middle; display: table-cell; }
     #centerContent {margin-left: auto; margin-right: auto; position: relative; }
-    #centerContent {width: 1068px; }
+    #centerContent {width: 900px; }
     </style>
 </head>
 <body>
-<div id="centerOuter"><div id="centerInner"><div id="centerContent">
-    <!-- START USERBODY -->
-    <video src="/static/static/intro.mp4" style="width:1068px;height:600px;" autoplay>
-    <!-- END USERBODY -->
-</div></div></div>
-
     <script type="text/javascript">
     setTimeout(function(){
         window.location.href = "/";
     }, 36000);
     </script>
+<div id="centerOuter"><div id="centerInner"><div id="centerContent"><!-- <center> -->
+    <!-- START USERBODY -->
+    <p style="text-align:right"><a href="/"><img src="/static/static/bmxacademy/images/skip.png"></a></p>
+    <iframe id="ytplayer" type="text/html" width="900" height="550"
+  src="http://www.youtube.com/embed/zVi9-iZVDUE?autoplay=1" frameborder="0"/>
+    <!-- END USERBODY -->
+<!-- </center> --></div></div></div>
+
+    
 </body>
 </html>
