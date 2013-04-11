@@ -50,7 +50,7 @@
                 <option {% if registration_form.transfer.value == "brno" %}selected="selected"{% endif %} value="brno">BMX Academy z Brna</option>
                 <option {% if registration_form.transfer.value == "bratislava" %}selected="selected"{% endif %} value="Bratislava">BMX Academy z Bratislavy</option>
             </select>
-        <p>&nbsp;&nbsp;<input type="checkbox" name="registration-accept" {% if registration_form.accept.value == "on" %}checked="checked"{%endif%} value="on"> Souhlasím s <a href="#" target="blank">pravidly akce</a>.</p>
+        <p>&nbsp;&nbsp;<input type="checkbox" name="registration-accept" {% if registration_form.accept.value == "on" %}checked="checked"{%endif%} value="on"> Souhlasím s <a href="/static/static/bmxacademy/pravidla2013.pdf" target="blank">pravidly akce</a>.</p>
         <p><input type="submit" value="Registrovat" class="tlacitko right tlacitko_reg"></p>
         <div style="clear:both;"></div>
     </div>
