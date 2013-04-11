@@ -96,6 +96,7 @@ class Gallery(models.Model):
 
 class Picture(models.Model):
     gallery = models.ForeignKey(Gallery)
+    order = models.IntegerField(default=0)
     img = ImageCropField(upload_to="bmxacademy/picture/img")
     img_crop = ImageRatioField("img", "130x130")
 

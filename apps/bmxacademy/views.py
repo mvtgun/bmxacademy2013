@@ -53,7 +53,7 @@ def index_view(request, template="bmxacademy/index.html"):
         if request.POST["form"] == "registration":
             message_form = None
 
-    a = gallery_qs[0].picture_set.all()[:100]
+    a = gallery_qs[0].picture_set.order_by("order")[:100]
     gallery = [a[i:i+12] for i in range(0,len(a),12)]
     return render_to_response(template, 
         {
