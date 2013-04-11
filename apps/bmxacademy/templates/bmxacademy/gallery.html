@@ -29,7 +29,7 @@
         {% for part in gallery %}
             <div>
                 {% for img in part %}
-                    <a href="{{ img.large.url }}" class="jlb" rel="lightbo" title="{{img.pk}}"><img src="{% cropped_thumbnail img img_crop height=127 upscale %}" alt="fotka" class="photo"></a>
+                    <a href="{{ img.large.url }}" class="jlb fancybox-media-photo" rel="lightbo" title="{{img.pk}}"><img src="{% cropped_thumbnail img img_crop height=127 upscale %}" alt="fotka" class="photo"></a>
                     
                 {% endfor %}
             </div>

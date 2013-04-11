@@ -165,8 +165,19 @@ doporučuje BMX Academy</p>
                 buttons : {}
             }
         });
+        jQuery('.fancybox-media-photo').attr('rel', 'media-gallery').fancybox({
+            openEffect : 'none',
+            closeEffect : 'none',
+            prevEffect : 'none',
+            nextEffect : 'none',
+            arrows : false,
+            helpers : {
+                media : {},
+                buttons : {}
+            }
+        });
 
-        $('.jlb').lightBox();
+        // $('.jlb').lightBox();
 
     });
 </script>
