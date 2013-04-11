@@ -104,7 +104,9 @@ class Picture(models.Model):
         return u"%s  %i" % (self.gallery.name, self.pk)
 
     def large(self):
-        return get_thumbnail(self.img, '800x500', crop='center', quality=99)
+        if self.img.width > self.img.height:
+            return get_thumbnail(self.img, '800x500', crop='center', quality=99)
+        return get_thumbnail(self.img, '500x800', crop='center', quality=99)
 
 # Email
 from django.template import Template, Context
