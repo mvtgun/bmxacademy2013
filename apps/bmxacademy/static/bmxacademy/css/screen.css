@@ -127,6 +127,10 @@ p{
 background-image: url(../images/info.png);
 }
 
+.information:hover{
+    background-position: 0px -45px;                
+}
+
 .icon_home{
     background-image: url(../images/house.png);          
 }
