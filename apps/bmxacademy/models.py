@@ -57,6 +57,19 @@ class Video(models.Model):
     def __unicode__(self):
         return u"%s %s" % (self.title, self.pub_date)
 
+CAP_SIZES = (
+    ("1", "6 7/8 (obvod hlavy - 54,9cm)"),
+    ("2", "7 (obvod hlavy - 55,8cm)"),
+    ("3", "7 3/4 (obvod hlavy - 56,8cm)"),
+    ("4", "7 3/8 (obvod hlavy - 57,7cm)"),
+    ("5", "7 1/2 (obvod hlavy - 58,7cm)"),
+    ("6", "7 1/4 (obvod hlavy - 59,6cm)"),
+    ("7", "7 3/4 (obvod hlavy - 60,6cm)"),
+    ("8", "7 3/8 (obvod hlavy - 61,5cm)"),
+    ("9", "7 5/8 (obvod hlavy - 62,5cm)"),
+    ("10","8 (obvod hlavy - 63,5cm)"),
+)
+
 class Participant(models.Model):
     registration_date = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=255)
@@ -66,7 +79,7 @@ class Participant(models.Model):
     phone = models.CharField(max_length=16)
     email = models.EmailField(max_length=64, unique=True)
     tshirt_size = models.CharField(max_length=8)
-    cap_size = models.CharField(max_length=8)
+    cap_size = models.CharField(max_length=8, choices=CAP_SIZES)
     camp_variant = models.CharField(max_length=8)
     transfer = models.CharField(max_length=8)
     advance = models.BooleanField(verbose_name="Zaloha")
