@@ -56,7 +56,7 @@ a img{
 
 p{
   line-height: 20px; 
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .cistic{
@@ -488,6 +488,10 @@ background-image: url(../images/info.png);
     float: left;     
 }
 
+.pole{
+    line-height: 35px;     
+}
+
 .form .pole{
     border: solid  #ba1110 2px;
     width: 315px;
@@ -531,13 +535,17 @@ background-image: url(../images/info.png);
     margin: -20px 65px 0px 0px;             
 }
 
+.druhotny{
+    width: 332px;
+    height: auto; 
+}
+
 .poradatel{
     display: block;
     width: 220px;
     height: auto;
     margin-left: 20px;
-    margin-top: 40px;
-            
+    margin-top: 40px;           
 }
 
 .poradatel h2{
@@ -756,12 +764,4 @@ background-image: url(../images/info.png);
 
 .beran_popis strong{
     font-size: 15px;                    
-}
-
-.frame{
-  border:none;
-  width:690px;
-  height: 300px;
-  display: block;
-  float: left;    
 }
