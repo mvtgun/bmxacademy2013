@@ -511,8 +511,9 @@ background-image: url(../images/info.png);
 
 .tlacitko{
     background-color: #c41818;
-    width: 113px;
-    height: 36px;
+    padding: 10px 30px 10px 30px;
+    /*width: 113px;*/
+    /*height: 36px;*/
     border: none;
     margin-top: 15px;
     font-size: 12px;
@@ -522,7 +523,8 @@ background-image: url(../images/info.png);
 }
 
 .tlacitko:hover{
-    background-color: #ee2d30;               
+    background-color: #ee2d30;   
+    color: white;            
 }
 
 .tlacitko_reg{

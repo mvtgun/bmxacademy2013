@@ -126,7 +126,8 @@
     <div class="wrapper" id="register">
         <a href="" id="_register"></a>
         {% include "bmxacademy/menu.html" %}
-        <iframe src="/registration/"  scrolling="no" style="border:none;width:720px;height:400px; float:left;"></iframe>
+        <!-- <iframe src="/registration/"  scrolling="no" style="border:none;width:720px;height:400px; float:left;"></iframe> -->
+        <div id="reg_div" style="float:left;"></div>
 
         <div class="beran" style="margin-top: 40px;float:left;">
        <img src="/static/static/bmxacademy/images/signature.png" alt="Michael Beran" class="sig">
@@ -169,7 +170,6 @@ doporučuje BMX Academy</p>
 
 <script type="text/javascript">
     $(document).ready(function() {
-        console.log($('.fancybox-media').attr('rel', 'media-gallery'));
         jQuery('.fancybox-media').attr('rel', 'media-gallery').fancybox({
             openEffect : 'none',
             closeEffect : 'none',
@@ -202,6 +202,15 @@ doporučuje BMX Academy</p>
 <style type="text/css">
 .fancybox-skin {background-color: black;}
 </style>
+
+<script type="text/javascript" src="http://localhost:8000/static/static/remote_ajax/main.js"></script>
+b<script type="text/javascript" src="/static/static/bmxacademy/form.js"></script>
+<script type="text/javascript">
+init_form("http://localhost:8000/registration/", "#reg_form", "#reg_sub", "#reg_div");
+</script>
+
+
+
 <script type="text/javascript"></script>
 </body>
 </html>
