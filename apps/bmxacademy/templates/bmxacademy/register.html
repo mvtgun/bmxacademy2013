@@ -85,3 +85,15 @@ doporučuje BMX Academy</p>
 {% endif %}
 
 </td></tr></table>
+
+<script type="text/javascript">
+if ( true) {
+    inputs2 = $("input");
+    inputs2.each(function(i,v){
+        if (!inputs2.eq(i).attr("value")){
+            inputs2.eq(i).attr("value", inputs2.eq(i).attr("placeholder"));
+        }
+    })
+}
+
+</script>

@@ -34,3 +34,15 @@
 
 
 </td></tr></table>
+
+<script type="text/javascript">
+if ( true) {
+    inputs = $("input");
+    inputs.each(function(i,v){
+        if (!inputs.eq(i).attr("value")){
+            inputs.eq(i).attr("value", inputs.eq(i).attr("placeholder"));
+        }
+    })
+}
+
+</script>
