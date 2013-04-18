@@ -204,11 +204,11 @@ doporučuje BMX Academy</p>
 .fancybox-skin {background-color: black;}
 </style>
 
-<script type="text/javascript" src="http://localhost:8000/static/static/remote_ajax/main.js"></script>
-b<script type="text/javascript" src="/static/static/bmxacademy/form.js"></script>
+<script type="text/javascript" src="/static/static/remote_ajax/main.js"></script>
+<script type="text/javascript" src="/static/static/bmxacademy/form.js"></script>
 <script type="text/javascript">
-init_form("http://localhost:8000/registration/", "#reg_form", "#reg_sub", "#reg_div");
-init_form("http://localhost:8000/contact/", "#con_form", "#con_sub", "#con_div");
+init_form(window.location.origin+"/registration/", "#reg_form", "#reg_sub", "#reg_div");
+init_form(window.location.origin+"/contact/", "#con_form", "#con_sub", "#con_div");
 </script>
 
 
