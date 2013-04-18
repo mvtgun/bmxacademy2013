@@ -102,7 +102,8 @@
         <a href="" id="_contact"></a>
         {% include "bmxacademy/menu.html" %}
         <!-- {% include "bmxacademy/contact.html" %} -->
-        <iframe src="/contact/"  scrolling="no" class="frame"></iframe>
+        <!-- <iframe src="/contact/"  scrolling="no" class="frame"></iframe> -->
+        <div id="con_div" style="float:left;"></div>
         
          <div class="poradatel left">
     <h2>Pořadatel BMX Academy</h2>
@@ -207,6 +208,7 @@ doporučuje BMX Academy</p>
 b<script type="text/javascript" src="/static/static/bmxacademy/form.js"></script>
 <script type="text/javascript">
 init_form("http://localhost:8000/registration/", "#reg_form", "#reg_sub", "#reg_div");
+init_form("http://localhost:8000/contact/", "#con_form", "#con_sub", "#con_div");
 </script>
 
 

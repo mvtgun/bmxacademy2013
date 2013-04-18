@@ -1,7 +1,6 @@
-{% include "bmxacademy/iframe.html" %}
 <table><tr><td>
 
-<form class="form" method="post" action="">
+<form class="form" method="post" id="con_form" action="">
     
     {% csrf_token %}
     <input type="hidden" name="form" value="message">
@@ -14,9 +13,10 @@
     </div>
     <div class="left">
         <p style="margin-left: 12px;">*</p><textarea name="message-text" class="textarea" placeholder="Text">{{message_form.text.value}}</textarea>
-        <p><input type="submit" value="Odeslat" class="tlacitko right"></p>
-    </div>
 </form>
+
+        <p><a type="submit" id="con_sub" class="tlacitko right">Odeslat</a></p>
+    </div>
 
 </td></tr>
 <tr><td>
